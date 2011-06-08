@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <name>Spring Moving</name>
     <organization>
-        <name>Spring-Moving.org</name>
+        <name>The Spring Moving Open Source Project</name>
     </organization>
     <developers>
         <developer>
@@ -20,6 +20,12 @@
             </roles>
         </developer>
     </developers>
+    <licenses>
+        <license>
+            <name>apache20</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+        </license>
+    </licenses>
     <properties>
 	    <springframework.version>3.0.5.RELEASE</springframework.version> 
     </properties>
