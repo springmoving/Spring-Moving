@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+    xmlns = "http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0     http://mallard.dev.ibu.geico.net/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.spring.moving.cm.database</groupId>
+    <artifactId>spring-moving-cm-database-derby</artifactId>
+    <version>MAIN-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Spring Moving -  CM Database Derby</name>
+    <organization>
+        <name>The Spring Moving Open Source Project</name>
+    </organization>
+    <developers>
+        <developer>
+            <id>bradm</id>
+            <name>Brad Messerle</name>
+            <organization></organization>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+    <licenses>
+        <license>
+            <name>apache20</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+        </license>
+    </licenses>
+       <properties>
+        <dataSource.project.driverClass></dataSource.project.driverClass>
+        <dataSource.project.jdbcURL>jdbc:derby://localhost:1527/springmoving</dataSource.project.jdbcURL>
+        <liquibase.contexts></liquibase.contexts>
+        <database.username>springmoving</database.username>   
+        <database.password>springmoving123</database.password>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <inherited>true</inherited>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <meminitial>128m</meminitial>
+                    <maxmem>512m</maxmem>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-plugin</artifactId>
+                <version>1.9.5.0</version>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <changeLogFile>src/main/resources/db.changelog-master.xml</changeLogFile>
+                            <driver>org.apache.derby.jdbc.ClientDriver</driver>
+                            <url>${dataSource.project.jdbcURL}</url>
+                            <username>${database.username}</username>
+                            <password>${database.password}</password>
+                        </configuration>
+                        <goals>
+                            <goal>update</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>1.9.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derbyclient</artifactId>
+            <version>10.5.3.0_1</version>
+        </dependency>
+    </dependencies>
+    <profiles>
+         <profile>
+            <id>local</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <inherited>true</inherited>
+                        <configuration>
+                            <source>1.6</source>
+                            <target>1.6</target>
+                            <meminitial>128m</meminitial>
+                            <maxmem>512m</maxmem>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.liquibase</groupId>
+                        <artifactId>liquibase-plugin</artifactId>
+                        <version>1.9.5.0</version>
+                        <executions>
+                            <execution>
+                                <phase>process-resources</phase>
+                                <configuration>
+                                    <changeLogFile>src/main/resources/db.changelog-master.xml</changeLogFile>
+                                    <driver>org.apache.derby.jdbc.ClientDriver</driver>
+                                    <url>${dataSource.project.jdbcURL}</url>
+                                    <username>${database.username}</username>
+                                    <password>${database.password}</password>
+                                </configuration>
+                                <goals>
+                                    <goal>update</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+       
+        
+    </profiles>
+</project>
