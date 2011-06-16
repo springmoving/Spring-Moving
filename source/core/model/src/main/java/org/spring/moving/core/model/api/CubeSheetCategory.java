@@ -16,7 +16,6 @@
 
 package org.spring.moving.core.model.api;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,23 +23,13 @@ import java.util.List;
  * @author Kristy Schoonover
  */
 
-public interface Move {
+public interface CubeSheetCategory {
     
-    public List<Crate> getCrates();
-    public List<CubeSheet> getCubeSheets();
     public int getId();
-    public PackingMaterial getPackingMaterial();
-    public ShipperInfo getShipper();
-    public StorageInTransit getSit();
-    public Date getSurveyDate();
-    public int getWorkOrderNumber();
-    public void setCrates(List<Crate> crates);
-    public void setCubeSheets(List<CubeSheet> cubeSheets);
+    public List<CubeSheetCategoryItem> getItems();
+    public String getName();
     public void setId(int id);
-    public void setPackingMaterial(PackingMaterial packingMaterial);
-    public void setShipper(ShipperInfo shipper);
-    public void setSit(StorageInTransit sit);
-    public void setSurveyDate(Date surveyDate);
-    public void setWorkOrderNumber(int workOrderNumber);   
+    public void setItems(List<CubeSheetCategoryItem> items);
+    public void setName(String name);
     
 }

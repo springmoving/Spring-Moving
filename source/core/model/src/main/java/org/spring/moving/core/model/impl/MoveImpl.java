@@ -15,11 +15,105 @@
  */
 package org.spring.moving.core.model.impl;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.Date;
+import java.util.List;
+import org.spring.moving.core.model.api.Crate;
+import org.spring.moving.core.model.api.CubeSheet;
+import org.spring.moving.core.model.api.Move;
+import org.spring.moving.core.model.api.PackingMaterial;
+import org.spring.moving.core.model.api.ShipperInfo;
+import org.spring.moving.core.model.api.StorageInTransit;
+
 /**
  * 
- * @author Brad Messerle
+ * @author Kristy Schoonover
  */
-public class MoveImpl {
+@Entity
+@Table(name = "MOVES")
+public class MoveImpl implements Move, Serializable {
+
+    private List<Crate> crates;
+    private List<CubeSheet> cubeSheets;
+    private int id;
+    private PackingMaterial packingMaterial;
+    private ShipperInfo shipper;
+    private StorageInTransit sit;
+    private Date surveyDate;
+    private int workOrderNumber;
+
+    @OneToMany(mappedBy="moves")
+    public List<Crate> getCrates() {
+        return crates;
+    }
     
+    @OneToMany(mappedBy="moves")
+    public List<CubeSheet> getCubeSheets() {
+        return cubeSheets;
+    }
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public int getId() {
+        return id;
+    }
+    
+    public PackingMaterial getPackingMaterial() {
+        return packingMaterial;
+    }
+    
+    public ShipperInfo getShipper() {
+        return shipper;
+    }
+    
+    public StorageInTransit getSit() {
+        return sit;
+    }
+    
+    public Date getSurveyDate() {
+        return surveyDate;
+    }
+
+    public int getWorkOrderNumber() {
+        return workOrderNumber;
+    }
+
+    public void setCrates(List<Crate> crates) {
+        this.crates = crates;
+    }
+    
+    public void setCubeSheets(List<CubeSheet> cubeSheets) {
+        this.cubeSheets = cubeSheets;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public void setPackingMaterial(PackingMaterial packingMaterial) {
+        this.packingMaterial = packingMaterial;
+    }
+    
+    public void setShipper(ShipperInfo shipper) {
+        this.shipper = shipper;
+    }
+    
+    public void setSit(StorageInTransit sit) {
+        this.sit = sit;
+    }
+    
+    public void setSurveyDate(Date surveyDate) {
+        this.surveyDate = surveyDate;
+    }
+    
+    public void setWorkOrderNumber(int workOrderNumber) {
+        this.workOrderNumber = workOrderNumber;
+    }
     
 }
