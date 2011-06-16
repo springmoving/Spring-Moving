@@ -1,1 +1,1 @@
-export DERBY_HOME=~/derby/bin
+export DERBY_INSTALL_PATH=~/derby/bin
