@@ -22,6 +22,7 @@ import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import org.spring.moving.core.model.api.Address;
 import org.spring.moving.core.model.api.CommunicationItem;
@@ -43,6 +44,7 @@ public class CustomerImpl implements Customer, Serializable {
     private String name;
     
     @Override
+    @ManyToOne()
     public Address getAddress() {
         return address;
     }
