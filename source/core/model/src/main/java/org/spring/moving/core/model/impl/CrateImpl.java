@@ -36,36 +36,44 @@ public class CrateImpl implements Crate, Serializable {
     private String dimensions;
     private int id;
     
+    @Override
     public int getCubicFeet() {
         return cubicFeet;
     }
     
+    @Override
     public String getDescription() {
         return description;
     }
     
+    @Override
     public String getDimensions() {
         return dimensions;
     }
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Override
     public int getId() {
         return id;
     }
     
+    @Override
     public void setCubicFeet(int cubicFeet) {
         this.cubicFeet = cubicFeet;
     }
     
+    @Override
     public void setDescription(String description) {
         this.description = description;
     }
     
+    @Override
     public void setDimensions(String dimensions) {
         this.dimensions = dimensions;
     }
     
+    @Override
     public void setId(int id) {
         this.id = id;
     }

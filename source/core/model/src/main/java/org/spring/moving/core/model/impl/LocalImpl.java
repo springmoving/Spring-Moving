@@ -37,20 +37,24 @@ public class LocalImpl extends CompanyProfileImpl implements Local {
     private int id;
     
     @OneToMany(mappedBy="locals")
+    @Override
     public List<Customer> getCustomers() {
         return customers;
     }
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Override
     public int getId() {
         return id;
     }
     
+    @Override
     public void setCustomers(List<Customer> customers) {
         this.customers = customers;
     }
   
+    @Override
     public void setId(int id) {
         this.id = id;
     }

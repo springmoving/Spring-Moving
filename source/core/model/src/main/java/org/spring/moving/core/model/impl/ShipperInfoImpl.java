@@ -41,45 +41,55 @@ public class ShipperInfoImpl implements ShipperInfo, Serializable {
    private int id;
    private String lastName;
    
+   @Override
    public Address getAddress() {
        return address;
    }
    
    @OneToMany(mappedBy="shipperInfo")
+   @Override
    public List<CommunicationItem> getCommunicationItems() {
       return communicationItems;
    }
 
+   @Override
    public String getFirstName() {
        return firstName;
    }
    
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Override
    public int getId() {
        return id;
    }
    
+   @Override
    public String getLastName() {
        return lastName;
    }
    
+   @Override
    public void setAddress(Address address) {
        this.address = address;
    }
    
+   @Override
    public void setCommunicationItems(List<CommunicationItem> communicationItems) {
        this.communicationItems = communicationItems;
    }
    
+   @Override
    public void setFirstName(String firstName) {
         this.firstName = firstName;
    }
 
+   @Override
    public void setId(int id) {
         this.id = id;
    }
    
+   @Override
    public void setLastName(String lastName) {
         this.lastName = lastName;
    }

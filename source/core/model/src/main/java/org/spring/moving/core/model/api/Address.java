@@ -21,7 +21,7 @@ package org.spring.moving.core.model.api;
  * @author Kristy Schoonover
  */
 
-public interface Address {
+public interface Address  {
     
     public String getAddress1();
     public String getAddress2();

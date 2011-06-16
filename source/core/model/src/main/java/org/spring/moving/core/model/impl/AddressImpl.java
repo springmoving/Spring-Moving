@@ -31,61 +31,72 @@ import org.spring.moving.core.model.api.Address;
 @Table(name = "ADDRESSES")
 public class AddressImpl implements Address, Serializable {
 
-   private String address1;
-   private String address2;
-   private String city;
-   private int id;
-   private String state;
-   private String zipCode;
-   
-   public String getAddress1() {
-       return address1;
-   }
-   
-   public String getAddress2() {
-       return address2;
-   }
-   
-   public String getCity() {
-       return city;
-   }
-   
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-   public int getId() {
-       return id;
-   }
-   
-   public String getState() {
-       return state;
-   }
-   
-   public String getZipCode() {
-       return zipCode;
-   }
-   
-   public void setAddress1(String address1) {
-       this.address1 = address1;
-   }
-   
-   public void setAddress2(String address2) {
-       this.address2 = address2;
-   }
-   
-   public void setCity(String city) {
-       this.city = city;
-   }
-   
-   public void setId(int id) {
-       this.id = id;
-   }
-   
-   public void setState(String state) {
-       this.state = state;
-   }
-   
-   public void setZipCode(String zipCode) {
-       this.zipCode = zipCode;
-   }
+    private String address1;
+    private String address2;
+    private String city;
+    private int id;
+    private String state;
+    private String zipCode;
 
+    @Override
+    public String getAddress1() {
+        return address1;
+    }
+
+    @Override
+    public String getAddress2() {
+        return address2;
+    }
+
+    @Override
+    public String getCity() {
+        return city;
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public String getState() {
+        return state;
+    }
+
+    @Override
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    @Override
+    public void setAddress1(String address1) {
+        this.address1 = address1;
+    }
+
+    @Override
+    public void setAddress2(String address2) {
+        this.address2 = address2;
+    }
+
+    @Override
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    @Override
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
 }

@@ -49,69 +49,85 @@ public class MoveImpl implements Move, Serializable {
     private int workOrderNumber;
 
     @OneToMany(mappedBy="moves")
+    @Override
     public List<Crate> getCrates() {
         return crates;
     }
     
     @OneToMany(mappedBy="moves")
+    @Override
     public List<CubeSheet> getCubeSheets() {
         return cubeSheets;
     }
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Override
     public int getId() {
         return id;
     }
     
+    @Override
     public PackingMaterial getPackingMaterial() {
         return packingMaterial;
     }
     
+    @Override
     public ShipperInfo getShipper() {
         return shipper;
     }
     
+    @Override
     public StorageInTransit getSit() {
         return sit;
     }
     
+    @Override
     public Date getSurveyDate() {
         return surveyDate;
     }
 
+    @Override
     public int getWorkOrderNumber() {
         return workOrderNumber;
     }
 
+    @Override
     public void setCrates(List<Crate> crates) {
         this.crates = crates;
     }
     
+    @Override
     public void setCubeSheets(List<CubeSheet> cubeSheets) {
         this.cubeSheets = cubeSheets;
     }
     
+    @Override
     public void setId(int id) {
         this.id = id;
     }
     
+    @Override
     public void setPackingMaterial(PackingMaterial packingMaterial) {
         this.packingMaterial = packingMaterial;
     }
     
+    @Override
     public void setShipper(ShipperInfo shipper) {
         this.shipper = shipper;
     }
     
+    @Override
     public void setSit(StorageInTransit sit) {
         this.sit = sit;
     }
     
+    @Override
     public void setSurveyDate(Date surveyDate) {
         this.surveyDate = surveyDate;
     }
     
+    @Override
     public void setWorkOrderNumber(int workOrderNumber) {
         this.workOrderNumber = workOrderNumber;
     }

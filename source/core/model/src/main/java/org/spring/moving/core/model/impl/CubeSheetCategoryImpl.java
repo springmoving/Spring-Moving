@@ -40,27 +40,33 @@ public class CubeSheetCategoryImpl implements CubeSheetCategory, Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Override
     public int getId() {
         return id;
     }
     
     @OneToMany(mappedBy="cubeSheetCategories")
+    @Override
     public List<CubeSheetCategoryItem> getItems() {
       return items;
     }
     
+    @Override
     public String getName() {
         return name;
     }
     
+    @Override
     public void setId(int id) {
         this.id = id;
     }
     
+    @Override
     public void setItems(List<CubeSheetCategoryItem> items) {
     this.items = items;
     }
     
+    @Override
     public void setName(String name) {
         this.name = name;
     }

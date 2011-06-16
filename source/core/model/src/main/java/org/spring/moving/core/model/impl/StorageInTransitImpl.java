@@ -36,37 +36,44 @@ public class StorageInTransitImpl implements StorageInTransit, Serializable {
    private int id;
    private int numberOfDays;
    
+   @Override
    public boolean getAtDestination() {
        return atDestination;
    }
    
+   @Override
    public boolean getAtOrigin() {
        return atOrigin;
    }
    
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Override
    public int getId() {
        return id;
    }
    
-   
+   @Override
    public int getNumberOfDays() {
        return numberOfDays;
    }
    
+   @Override
    public void setAtDestination(boolean atDestination) {
        this.atDestination = atDestination;
    }
    
+   @Override
    public void setAtOrigin(boolean atOrigin) {
        this.atOrigin = atOrigin;
    }
    
+   @Override
    public void setId(int id) {
        this.id = id;
    }
    
+   @Override
    public void setNumberOfDays(int numberOfDays) {
        this.numberOfDays = numberOfDays;
    }

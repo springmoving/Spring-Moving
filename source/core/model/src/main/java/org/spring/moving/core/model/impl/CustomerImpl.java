@@ -42,46 +42,56 @@ public class CustomerImpl implements Customer, Serializable {
     private List<Move> moves;
     private String name;
     
+    @Override
     public Address getAddress() {
         return address;
     }
     
     @OneToMany(mappedBy="customers")
+    @Override
     public List<CommunicationItem> getCommunicationItems() {
         return communicationItems;
     }
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Override
     public int getId() {
         return id;
     }
     
     @OneToMany(mappedBy="customers")
+    @Override
     public List<Move> getMoves() {
         return moves;
     }
     
+    @Override
     public String getName() {
         return name;
     }
     
+    @Override
     public void setAddress(Address address) {
         this.address = address;
     }
     
+    @Override
     public void setCommunicationItems(List<CommunicationItem> communicationItems) {
         this.communicationItems = communicationItems;
     }
     
+    @Override
     public void setId(int id) {
         this.id = id;
     }
     
+    @Override
     public void setMoves(List<Move> moves) {
         this.moves = moves;
     }
     
+    @Override
     public void setName(String name) {
         this.name = name;
     }

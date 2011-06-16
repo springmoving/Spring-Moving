@@ -37,26 +37,32 @@ public class CommunicationItemImpl implements CommunicationItem, Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Override
     public int getId() {
         return id;
     }
     
+    @Override
     public String getName() {
         return name;
     }
     
+    @Override
     public String getValue() {
         return value;
     }
     
+    @Override
     public void setId(int id) {
         this.id = id;
     }
     
+    @Override
     public void setName(String name) {
         this.name = name;
     }
     
+    @Override
     public void setValue(String value) {
         this.value = value;
     }

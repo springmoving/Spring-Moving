@@ -40,27 +40,33 @@ public class AgentImpl implements Agent, Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Override
     public int getId() {
         return id;
     }
     
     @OneToMany(mappedBy="agents")
+    @Override
     public List<Move> getMoves() {
         return moves;
     }
     
+    @Override
     public String getName() {
         return name;
     }
     
+    @Override
     public void setId(int id) {
         this.id = id;
     }
     
+    @Override
     public void setMoves(List<Move> moves) {
         this.moves = moves;
     }
     
+    @Override
     public void setName(String name) {
         this.name = name;
     }

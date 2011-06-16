@@ -16,7 +16,6 @@
 package org.spring.moving.core.model.impl;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
@@ -38,26 +37,32 @@ public class CompanyProfileImpl implements CompanyProfile, Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Override
     public int getId() {
         return id;
     }
     
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public String getTimeZone() {
         return timeZone;
     }
     
+    @Override
     public void setId(int id) {
         this.id = id;
     }
     
+    @Override
     public void setName(String name) {
         this.name = name;
     }
     
+    @Override
     public void setTimeZone(String timeZone) {
         this.timeZone = timeZone;
     }

@@ -16,7 +16,6 @@
 package org.spring.moving.core.model.impl;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
@@ -36,20 +35,24 @@ public class SystemConfigurationImpl implements SystemConfiguration, Serializabl
     private CompanyProfile companyProfile;
     private int id;
 
+    @Override
     public CompanyProfile getCompanyProfile() {
         return companyProfile;
     }
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Override
     public int getId() {
         return id;
     }
     
+    @Override
     public void setCompanyProfile(CompanyProfile companyProfile) {
         this.companyProfile = companyProfile;
     }
     
+    @Override
     public void setId(int id) {
         this.id = id;
     }

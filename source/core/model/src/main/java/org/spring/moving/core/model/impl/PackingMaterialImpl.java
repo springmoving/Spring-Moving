@@ -15,6 +15,7 @@
  */
 package org.spring.moving.core.model.impl;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
@@ -34,10 +35,12 @@ public class PackingMaterialImpl implements PackingMaterial, Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Override
     public int getId() {
         return id;
     }
     
+    @Override
     public void setId(int id) {
             this.id = id;
     }

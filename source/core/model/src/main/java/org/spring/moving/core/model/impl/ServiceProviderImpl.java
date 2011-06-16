@@ -37,20 +37,24 @@ public class ServiceProviderImpl extends CompanyProfileImpl implements ServicePr
     private int id;
     
     @OneToMany(mappedBy="serviceProvider")
+    @Override
     public List<Account> getAccounts() {
         return accounts;
     }
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Override
     public int getId() {
         return id;
     }
     
+    @Override
     public void setAccounts(List<Account> accounts) {
         this.accounts = accounts;
     }
   
+    @Override
     public void setId(int id) {
         this.id = id;
     }

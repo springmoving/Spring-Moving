@@ -15,12 +15,14 @@
  */
 package org.spring.moving.core.model.impl;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import org.spring.moving.core.model.api.Account;
 import org.spring.moving.core.model.api.Address;
 import org.spring.moving.core.model.api.CommunicationItem;
@@ -32,7 +34,7 @@ import org.spring.moving.core.model.api.Move;
  */
 @Entity
 @Table(name = "ACCOUNTS")
-public class AccountImpl implements Account {
+public class AccountImpl implements Account, Serializable {
 
     private Address address;
     private List<CommunicationItem> communicationItems;
@@ -40,46 +42,56 @@ public class AccountImpl implements Account {
     private List<Move> moves;
     private String name;
     
+    @Override
     public Address getAddress() {
         return address;
     }
     
-    @OneToMany(mapped="accounts")
+    @OneToMany(mappedBy="accounts")
+    @Override
     public List<CommunicationItem> getCommunicationItems() {
         return communicationItems;
     }
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Override
     public int getId() {
         return id;
     }
     
     @OneToMany(mappedBy="accounts")
+    @Override
     public List<Move> getMoves() {
         return moves;
     }
     
+    @Override
     public String getName() {
         return name;
     }
     
+    @Override
     public void setAddress(Address address) {
         this.address = address;
     }
     
+    @Override
     public void setCommunicationItems(List<CommunicationItem> communicationItems) {
         this.communicationItems = communicationItems;
     }
     
+    @Override
     public void setId(int id) {
         this.id = id;
     }
     
+    @Override
     public void setMoves(List<Move> moves) {
         this.moves = moves;
     }
     
+    @Override
     public void setName(String name) {
         this.name = name;
     }

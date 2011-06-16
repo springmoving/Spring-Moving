@@ -22,6 +22,7 @@ import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import org.spring.moving.core.model.api.Agent;
 import org.spring.moving.core.model.api.VanLine;
 
@@ -38,28 +39,34 @@ public class VanLineImpl extends CompanyProfileImpl implements VanLine, Serializ
     private String name;
     
     @OneToMany(mappedBy="vanLines")
+    @Override
     public List<Agent> getAgents() {
         return agents;
     }
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Override
     public int getId() {
         return id;
     }
     
+    @Override
     public String getName() {
         return name;
     }
     
+    @Override
     public void setAgents(List<Agent> agents) {
         this.agents = agents;
     }
   
+    @Override
     public void setId(int id) {
         this.id = id;
     }
     
+    @Override
     public void setName(String name) {
         this.name = name;
     }

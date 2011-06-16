@@ -42,53 +42,65 @@ public class CubeSheetImpl implements CubeSheet, Serializable {
     private String notes;
     
     @OneToMany(mappedBy="cubeSheet")
+    @Override
     public List<CubeSheetCategory> getExcludedItems() {
         return excludedItems;
     }
     
+    @Override
     public String getExtraLabor() {
         return extraLabor;
     }
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Override
     public int getId() {
         return id;
     }
     
     @OneToMany(mappedBy="cubeSheet")
+    @Override
     public List<CubeSheetCategory> getIncludedItems() {
         return includedItems;
     }
     
+    @Override
     public String getName() {
         return name;
     }
     
+    @Override
     public String getNotes() {
         return notes;
     }
     
+    @Override
     public void setExcludedItems(List<CubeSheetCategory> excludedItems) {
         this.excludedItems = excludedItems;
     }
     
+    @Override
     public void setExtraLabor(String extraLabor) {
         this.extraLabor = extraLabor;
     }
     
+    @Override
     public void setId(int id) {
         this.id = id;
     }
     
+    @Override
     public void setIncludedItems(List<CubeSheetCategory> includedItems) {
         this.includedItems = includedItems;
     }
     
+    @Override
     public void setName(String name) {
         this.name = name;
     }
-    
+ 
+    @Override
     public void setNotes(String notes) {
         this.notes = notes;
     }
