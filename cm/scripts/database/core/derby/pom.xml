@@ -109,7 +109,6 @@
             <artifactId>spring-moving-cm-liquibase-changelogs</artifactId>
             <version>MAIN-SNAPSHOT</version>            
         </dependency>
-        
     </dependencies>
     <profiles>
          <profile>
@@ -130,7 +129,7 @@
                     <plugin>
                         <groupId>org.liquibase</groupId>
                         <artifactId>liquibase-plugin</artifactId>
-                        <version>2.0.1.0</version>
+                        <version>1.9.5.0</version>
                         <executions>
                             <execution>
                                 <phase>process-resources</phase>
@@ -150,7 +149,5 @@
                 </plugins>
             </build>
         </profile>
-       
-        
     </profiles>
 </project>
