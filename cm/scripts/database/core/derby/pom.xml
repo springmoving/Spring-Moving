@@ -60,7 +60,7 @@
                         </goals>
                         <phase>generate-resources</phase>
                         <configuration>
-                            <outputDirectory>src/main/resources</outputDirectory>
+                            <outputDirectory>target/resources</outputDirectory>
                             <includeArtifacIds>spring-moving-cm-liquibase-changelogs</includeArtifacIds>
                             <includeGroupIds>org.spring.moving.cm.database</includeGroupIds>
                             <includeClassifiers>resources</includeClassifiers>
