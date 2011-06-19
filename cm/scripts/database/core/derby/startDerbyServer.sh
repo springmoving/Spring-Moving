@@ -7,7 +7,8 @@
 #  June 14th 2011
 
 . ./config_env.sh
-cd $DERBY_INSTALL_PATH
-./startNetworkServer
+cd $SMDATABASE_HOME
+$DERBY_INSTALL_PATH/startNetworkServer
+
 
  
