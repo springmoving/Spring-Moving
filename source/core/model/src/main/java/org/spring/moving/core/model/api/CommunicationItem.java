@@ -23,11 +23,17 @@ package org.spring.moving.core.model.api;
 
 public interface CommunicationItem {
     
+    
+    //Idenity
     public int getId();
-    public String getName();
-    public String getValue();
     public void setId(int id);
+    
+    //Name
+    public String getName();
     public void setName(String name);
+    
+    //Value
+    public String getValue();
     public void setValue(String value);
     
 }

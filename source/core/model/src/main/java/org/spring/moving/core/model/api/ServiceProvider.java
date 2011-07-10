@@ -25,9 +25,30 @@ import java.util.List;
 
 public interface ServiceProvider {
     
-    public List<Account> getAccounts();
+    
+    //Idenity
     public int getId();
-    public void setAccounts(List<Account> accounts);
     public void setId(int id);
+     
+    
+    //Address 
+    public String getAddress1();
+    public void setAddress1(String address1);
+    public String getAddress2();
+    public void setAddress2(String address2);
+    public String getCity();
+    public void setCity(String city);
+    public String getState();
+    public void setState(String state);
+    public String getZipcode();
+    public void setZipcode(String zipcode);
+
+    
+    // Relationships
+    public List<Account> getAccounts();
+    public void setAccounts(List<Account> accounts);
+    public List<CommunicationItem> getCommunicationItems();
+    public void setCommunicationItems(List<CommunicationItem> communicationItems);
+    
 
 }

@@ -23,11 +23,16 @@ package org.spring.moving.core.model.api;
 
 public interface CompanyProfile {
     
+    //Idenity
     public int getId();
-    public String getName();
-    public String getTimeZone();
     public void setId(int id);
+    
+    //Name 
+    public String getName();
     public void setName(String name);
+    
+    //Time Zone
+    public String getTimeZone();
     public void setTimeZone(String name);
 
 }

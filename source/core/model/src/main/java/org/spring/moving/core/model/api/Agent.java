@@ -25,11 +25,16 @@ import java.util.List;
 
 public interface Agent {
     
+    //Idenity
     public int getId();
-    public List<Move> getMoves();
-    public String getName();
     public void setId(int id);
-    public void setMoves(List<Move> moves);
+    
+    // Agent Name
+    public String getName();
     public void setName(String name);
+    
+    //Relationships
+    public List<Move> getMoves();
+    public void setMoves(List<Move> moves);
 
 }

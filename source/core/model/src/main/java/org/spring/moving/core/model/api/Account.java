@@ -35,7 +35,6 @@ public interface Account {
     public void setName(String name);
     
     //Address
-    
     public String getAddress1();
     public void setAddress1(String address1);
     public String getAddress2();
@@ -48,7 +47,6 @@ public interface Account {
     public void setZipcode(String zipcode);
     
     //Relationships
-    
     public List<Move> getMoves();
     public void setMoves(List<Move> moves);
     public List<CommunicationItem> getCommunicationItems();
