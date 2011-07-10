@@ -25,14 +25,33 @@ import java.util.List;
 
 public interface Account {
     
-   
-    public List<CommunicationItem> getCommunicationItems();
+    
+    // Idenity 
     public int getId();
-    public List<Move> getMoves();
-    public String getName();
-    public void setCommunicationItems(List<CommunicationItem> communicationItems);
     public void setId(int id);
-    public void setMoves(List<Move> moves);
+    
+    // Account Name
+    public String getName();
     public void setName(String name);
+    
+    //Address
+    
+    public String getAddress1();
+    public void setAddress1(String address1);
+    public String getAddress2();
+    public void setAddress2(String address2);
+    public String getCity();
+    public void setCity(String city);
+    public String getState();
+    public void setState(String state);
+    public String getZipcode();
+    public void setZipcode(String zipcode);
+    
+    //Relationships
+    
+    public List<Move> getMoves();
+    public void setMoves(List<Move> moves);
+    public List<CommunicationItem> getCommunicationItems();
+    public void setCommunicationItems(List<CommunicationItem> communicationItems);  
 
 }
