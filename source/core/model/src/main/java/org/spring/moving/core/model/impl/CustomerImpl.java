@@ -24,7 +24,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import org.spring.moving.core.model.api.Address;
 import org.spring.moving.core.model.api.CommunicationItem;
 import org.spring.moving.core.model.api.Customer;
 import org.spring.moving.core.model.api.Move;
@@ -37,17 +36,11 @@ import org.spring.moving.core.model.api.Move;
 @Table(name = "CUSTOMERS")
 public class CustomerImpl implements Customer, Serializable {
 
-    private Address address;
     private List<CommunicationItem> communicationItems;
     private int id;
     private List<Move> moves;
     private String name;
     
-    @Override
-    @ManyToOne()
-    public Address getAddress() {
-        return address;
-    }
     
     @OneToMany(mappedBy="customers")
     @Override
@@ -73,10 +66,6 @@ public class CustomerImpl implements Customer, Serializable {
         return name;
     }
     
-    @Override
-    public void setAddress(Address address) {
-        this.address = address;
-    }
     
     @Override
     public void setCommunicationItems(List<CommunicationItem> communicationItems) {

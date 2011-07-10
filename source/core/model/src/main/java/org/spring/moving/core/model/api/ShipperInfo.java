@@ -25,12 +25,10 @@ import java.util.List;
 
 public interface ShipperInfo {
     
-    public Address getAddress();
     public List<CommunicationItem> getCommunicationItems();
     public String getFirstName();
     public int getId();
     public String getLastName();
-    public void setAddress(Address address);
     public void setCommunicationItems(List<CommunicationItem> communicationItems);
     public void setFirstName(String firstName);
     public void setId(int id);

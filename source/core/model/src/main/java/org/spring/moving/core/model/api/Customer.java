@@ -25,12 +25,11 @@ import java.util.List;
 
 public interface Customer {
     
-    public Address getAddress();
+    
     public List<CommunicationItem> getCommunicationItems();
     public int getId();
     public List<Move> getMoves();
     public String getName();
-    public void setAddress(Address address);
     public void setCommunicationItems(List<CommunicationItem> communicationItems);
     public void setId(int id);
     public void setMoves(List<Move> moves);

@@ -23,7 +23,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.OneToMany;
 import javax.persistence.Id;
 import java.util.List;
-import org.spring.moving.core.model.api.Address;
 import org.spring.moving.core.model.api.CommunicationItem;
 import org.spring.moving.core.model.api.ShipperInfo;
 
@@ -35,16 +34,11 @@ import org.spring.moving.core.model.api.ShipperInfo;
 @Table(name = "SHIPPER_INFOS")
 public class ShipperInfoImpl implements ShipperInfo, Serializable {
 
-   private Address address;
    private List<CommunicationItem> communicationItems;
    private String firstName;
    private int id;
    private String lastName;
    
-   @Override
-   public Address getAddress() {
-       return address;
-   }
    
    @OneToMany(mappedBy="shipperInfo")
    @Override
@@ -69,10 +63,6 @@ public class ShipperInfoImpl implements ShipperInfo, Serializable {
        return lastName;
    }
    
-   @Override
-   public void setAddress(Address address) {
-       this.address = address;
-   }
    
    @Override
    public void setCommunicationItems(List<CommunicationItem> communicationItems) {
