@@ -23,7 +23,7 @@ import org.springframework.stereotype.Service;
  * @author Brad Messerle
  */
 
-@Service("geonameService")
+@Service("KeepAliveService")
 public class KeepAliveImpl implements KeepAlive {
 
     @Override
