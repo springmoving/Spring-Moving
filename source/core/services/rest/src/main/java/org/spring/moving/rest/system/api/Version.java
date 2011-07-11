@@ -16,13 +16,13 @@
 package org.spring.moving.rest.system.api;
 
 /**
- *
- * Service to confirm that the server is running.
  * 
+ * Service to return the current version of the server software
+ *
  * @author Brad Messerle
  */
-public interface KeepAlive {
- 
-    public Boolean isAlive();
+public interface Version {
+    
+    public String getVersion();
     
 }

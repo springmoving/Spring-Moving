@@ -17,12 +17,13 @@ package org.spring.moving.rest.system.api;
 
 /**
  *
- * Service to confirm that the server is running.
+ * Service to return compatible tablet versions 
  * 
  * @author Brad Messerle
  */
-public interface KeepAlive {
- 
-    public Boolean isAlive();
+public interface TabletCompatibleVersion {
     
+    public String getVersion();
+    
+   
 }

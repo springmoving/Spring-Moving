@@ -13,16 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.spring.moving.rest.system.api;
+package org.spring.moving.rest.system.impl;
+
+import org.spring.moving.rest.system.api.TabletCompatibleVersion;
+import org.springframework.stereotype.Service;
 
 /**
  *
- * Service to confirm that the server is running.
- * 
  * @author Brad Messerle
  */
-public interface KeepAlive {
- 
-    public Boolean isAlive();
+@Service("TabletCompatibleVersionService")
+public class TabletCompatibleVersionImpl implements TabletCompatibleVersion {
+
+    @Override
+    public String getVersion() {
+        return "0.0.1";
+    }
     
 }
