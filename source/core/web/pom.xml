@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>spring.moving.org.services</groupId>
+        <artifactId>spring-moving-services</artifactId>
+        <version>MAIN-SNAPSHOT</version>
+    </parent>
+    <groupId>spring.moving.org.services.rest</groupId>
+    <artifactId>spring-moving-services-rest</artifactId>
+    <version>MAIN-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>Spring Moving - Core - Services - Rest Services Module</name>
+    <organization>
+        <name>The Spring Moving Open Source Project</name>
+    </organization>
+    <developers>
+        <developer>
+            <id>bradmesserle</id>
+            <name>Brad Messerle</name>
+            <email>bradmesserle@gmail.com</email>
+            <organization></organization>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+    
+    
+   <dependencies>
+   
+        
+        <!-- Spring Moving Dependencies -->
+        
+        <dependency>
+            <groupId>spring.moving.org.model</groupId>
+            <artifactId>spring-moving-model</artifactId>
+            <version>MAIN-SNAPSHOT</version>
+        </dependency>
+
+
+     </dependencies>
+
+    
+    
+    
+</project>
