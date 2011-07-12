@@ -23,7 +23,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.OneToMany;
 import javax.persistence.Id;
 import java.util.List;
-import org.spring.moving.core.model.api.Address;
 import org.spring.moving.core.model.api.CommunicationItem;
 import org.spring.moving.core.model.api.ShipperInfo;
 
@@ -35,15 +34,29 @@ import org.spring.moving.core.model.api.ShipperInfo;
 @Table(name = "SHIPPER_INFOS")
 public class ShipperInfoImpl implements ShipperInfo, Serializable {
 
-   private Address address;
+   private String address1;
+   private String address2;
+   private String city;
    private List<CommunicationItem> communicationItems;
    private String firstName;
    private int id;
    private String lastName;
+   private String state;
+   private String zipCode;
    
    @Override
-   public Address getAddress() {
-       return address;
+   public String getAddress1() {
+       return address1;
+   }
+   
+   @Override
+   public String getAddress2() {
+       return address2;
+   }
+   
+   @Override
+   public String getCity() {
+       return city;
    }
    
    @OneToMany(mappedBy="shipperInfo")
@@ -70,8 +83,28 @@ public class ShipperInfoImpl implements ShipperInfo, Serializable {
    }
    
    @Override
-   public void setAddress(Address address) {
-       this.address = address;
+   public String getState() {
+       return state;
+   }
+   
+   @Override
+   public String getZipCode() {
+       return zipCode;
+   }
+   
+   @Override
+   public void setAddress1(String address1) {
+       this.address1 = address1;
+   }
+   
+   @Override
+   public void setAddress2(String address2) {
+       this.address2 = address2;
+   }
+   
+   @Override
+   public void setCity(String city) {
+       this.city = city;
    }
    
    @Override
@@ -92,6 +125,16 @@ public class ShipperInfoImpl implements ShipperInfo, Serializable {
    @Override
    public void setLastName(String lastName) {
         this.lastName = lastName;
+   }
+   
+   @Override
+   public void setState(String state) {
+       this.state = state;
+   }
+   
+   @Override
+   public void setZipCode(String zipCode) {
+       this.zipCode = zipCode;
    }
     
 }

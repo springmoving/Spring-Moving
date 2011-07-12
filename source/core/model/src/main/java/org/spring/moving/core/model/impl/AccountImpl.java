@@ -22,10 +22,8 @@ import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import org.spring.moving.core.model.api.Account;
-import org.spring.moving.core.model.api.Address;
 import org.spring.moving.core.model.api.CommunicationItem;
 import org.spring.moving.core.model.api.Move;
 
@@ -37,66 +35,107 @@ import org.spring.moving.core.model.api.Move;
 @Table(name = "ACCOUNTS")
 public class AccountImpl implements Account, Serializable {
 
-    private Address address;
+    private String address1;
+    private String address2;
+    private String city;
     private List<CommunicationItem> communicationItems;
     private int id;
     private List<Move> moves;
     private String name;
-    
-   
+    private String state;
+    private String zipCode;
+
     @Override
-    @ManyToOne()
-    public Address getAddress() {
-        return address;
+    public String getAddress1() {
+        return address1;
     }
-    
-    @OneToMany(mappedBy="accounts")
+
+    @Override
+    public String getAddress2() {
+        return address2;
+    }
+
+    @Override
+    public String getCity() {
+        return city;
+    }
+
+    @OneToMany(mappedBy = "accounts")
     @Override
     public List<CommunicationItem> getCommunicationItems() {
         return communicationItems;
     }
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Override
     public int getId() {
         return id;
     }
-    
-    @OneToMany(mappedBy="accounts")
+
+    @OneToMany(mappedBy = "accounts")
     @Override
     public List<Move> getMoves() {
         return moves;
     }
-    
+
     @Override
     public String getName() {
         return name;
     }
-    
+
     @Override
-    public void setAddress(Address address) {
-        this.address = address;
+    public String getState() {
+        return state;
     }
-    
+
+    @Override
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    @Override
+    public void setAddress1(String address1) {
+        this.address1 = address1;
+    }
+
+    @Override
+    public void setAddress2(String address2) {
+        this.address2 = address2;
+    }
+
+    @Override
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     @Override
     public void setCommunicationItems(List<CommunicationItem> communicationItems) {
         this.communicationItems = communicationItems;
     }
-    
+
     @Override
     public void setId(int id) {
         this.id = id;
     }
-    
+
     @Override
     public void setMoves(List<Move> moves) {
         this.moves = moves;
     }
-    
+
     @Override
     public void setName(String name) {
         this.name = name;
     }
-    
+
+    @Override
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    @Override
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
 }
