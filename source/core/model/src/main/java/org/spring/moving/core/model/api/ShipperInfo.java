@@ -24,19 +24,13 @@ import java.util.List;
  */
 
 public interface ShipperInfo {
+
     
-    public String getAddress1();
-    public String getAddress2();
-    public String getCity();
+
     public List<CommunicationItem> getCommunicationItems();
     public String getFirstName();
     public int getId();
     public String getLastName();
-    public String getState();
-    public String getZipCode();
-    public void setAddress1(String address1);
-    public void setAddress2(String address2);
-    public void setCity(String city);
     public void setCommunicationItems(List<CommunicationItem> communicationItems);
     public void setFirstName(String firstName);
     public void setId(int id);

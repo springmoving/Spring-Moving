@@ -13,27 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.spring.moving.core.model.impl;
+package org.spring.moving.core.model.configuration.impl;
 
-import java.io.Serializable;
+import java.util.List;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import org.spring.moving.core.model.api.CompanyProfile;
+import javax.persistence.OneToMany;
+import org.spring.moving.core.model.api.Customer;
+import org.spring.moving.core.model.configuration.api.Local;
 
 /**
  * 
  * @author Kristy Schoonover
  */
 @Entity
-@Table(name = "COMPANY_PROFILES")
-public class CompanyProfileImpl implements CompanyProfile, Serializable {
+@DiscriminatorValue("Local")
+public class LocalImpl extends CompanyProfileImpl implements Local {
 
+    private List<Customer> customers;
     private int id;
-    private String name;
-    private String timeZone;
+    
+    @OneToMany(mappedBy="locals")
+    @Override
+    public List<Customer> getCustomers() {
+        return customers;
+    }
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,28 +50,13 @@ public class CompanyProfileImpl implements CompanyProfile, Serializable {
     }
     
     @Override
-    public String getName() {
-        return name;
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
     }
-
-    @Override
-    public String getTimeZone() {
-        return timeZone;
-    }
-    
+  
     @Override
     public void setId(int id) {
         this.id = id;
-    }
-    
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    @Override
-    public void setTimeZone(String timeZone) {
-        this.timeZone = timeZone;
     }
     
 }

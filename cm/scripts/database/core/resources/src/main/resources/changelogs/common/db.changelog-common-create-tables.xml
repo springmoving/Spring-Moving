@@ -21,28 +21,19 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             
+            <column name="profile_type" type="varchar(20)"/>
+            
             <column name="name" type="varchar(150)"/>
+            <column name="address1" type="varchar(100)"/>
+            <column name="address2" type="varchar(100)"/>
+            <column name="city" type="varchar(50)"/>
+            <column name="state" type="varchar(10)"/> 
+            <column name="zipcode" type="varchar(10)"/>
+            
             <column name="timezone" type="varchar(5)"/>              
         </createTable>
 
-        <createTable tableName="sm_service_provider">
-            <column name="id" type="int" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-        </createTable>
-        
-        <createTable tableName="sm_van_line">
-            <column name="id" type="int" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-        </createTable>        
-        
-        <createTable tableName="sm_local">
-            <column name="id" type="int" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-        </createTable>        
-        
+
         <createTable tableName="sm_account">
             <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>

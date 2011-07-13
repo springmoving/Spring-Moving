@@ -13,30 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.spring.moving.core.model.impl;
+package org.spring.moving.core.model.configuration.impl;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import org.spring.moving.core.model.api.Agent;
-import org.spring.moving.core.model.api.VanLine;
+import org.spring.moving.core.model.configuration.api.VanLine;
 
 /**
  * 
  * @author Kristy Schoonover
  */
 @Entity
-@Table(name = "VAN_LINES")
+@DiscriminatorValue("VanLine")
 public class VanLineImpl extends CompanyProfileImpl implements VanLine, Serializable {
 
     private List<Agent> agents;
-    private int id;
-    private String name;
     
     @OneToMany(mappedBy="vanLines")
     @Override
@@ -44,31 +39,10 @@ public class VanLineImpl extends CompanyProfileImpl implements VanLine, Serializ
         return agents;
     }
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Override
-    public int getId() {
-        return id;
-    }
-    
-    @Override
-    public String getName() {
-        return name;
-    }
     
     @Override
     public void setAgents(List<Agent> agents) {
         this.agents = agents;
-    }
-  
-    @Override
-    public void setId(int id) {
-        this.id = id;
-    }
-    
-    @Override
-    public void setName(String name) {
-        this.name = name;
     }
         
 }

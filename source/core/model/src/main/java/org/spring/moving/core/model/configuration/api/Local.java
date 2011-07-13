@@ -14,26 +14,21 @@
  * limitations under the License.
  */
 
-package org.spring.moving.core.model.api;
+package org.spring.moving.core.model.configuration.api;
+
+import java.util.List;
+import org.spring.moving.core.model.api.Customer;
 
 /**
  *
  * @author Kristy Schoonover
  */
 
-public interface CommunicationItem {
+public interface Local extends CompanyProfile {
     
     
-    //Idenity
-    public int getId();
-    public void setId(int id);
-    
-    //Name
-    public String getName();
-    public void setName(String name);
-    
-    //Value
-    public String getValue();
-    public void setValue(String value);
-    
+    //Releationships
+    public List<Customer> getCustomers();
+    public void setCustomers(List<Customer> customers);
+
 }

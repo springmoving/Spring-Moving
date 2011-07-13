@@ -14,20 +14,25 @@
  * limitations under the License.
  */
 
-package org.spring.moving.core.model.api;
+package org.spring.moving.core.model.configuration.api;
+
+import java.util.List;
+import org.spring.moving.core.model.api.Account;
+import org.spring.moving.core.model.api.CommunicationItem;
 
 /**
  *
  * @author Kristy Schoonover
  */
 
-public interface CompanyProfile {
+public interface ServiceProvider extends CompanyProfile {
     
-    public int getId();
-    public String getName();
-    public String getTimeZone();
-    public void setId(int id);
-    public void setName(String name);
-    public void setTimeZone(String name);
+    
+    // Relationships
+    public List<Account> getAccounts();
+    public void setAccounts(List<Account> accounts);
+    public List<CommunicationItem> getCommunicationItems();
+    public void setCommunicationItems(List<CommunicationItem> communicationItems);
+    
 
 }

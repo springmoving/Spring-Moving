@@ -35,9 +35,6 @@ import org.spring.moving.core.model.api.Move;
 @Table(name = "CUSTOMERS")
 public class CustomerImpl implements Customer, Serializable {
 
-    private String address1;
-    private String address2;
-    private String city;
     private List<CommunicationItem> communicationItems;
     private int id;
     private List<Move> moves;
@@ -45,20 +42,8 @@ public class CustomerImpl implements Customer, Serializable {
     private String state;
     private String zipCode;
     
-    @Override
-    public String getAddress1() {
-        return address1;
-    }
-    
-    @Override
-    public String getAddress2() {
-        return address2;
-    } 
-            
-    @Override
-    public String getCity() {
-        return city;
-    }
+
+
     
     @OneToMany(mappedBy="customers")
     @Override
@@ -83,32 +68,7 @@ public class CustomerImpl implements Customer, Serializable {
     public String getName() {
         return name;
     }
-    
-    @Override
-    public String getState() {
-        return state;
-    }
-    
-    @Override
-    public String getZipCode() {
-        return zipCode;
-    }
-    
-    @Override
-    public void setAddress1(String address1) {
-        this.address1 = address1;
-    }
-    
-    @Override
-    public void setAddress2(String address2) {
-        this.address2 = address2;
-    }
-    
-    @Override
-    public void setCity(String city) {
-        this.city = city;
-    }
-    
+        
     @Override
     public void setCommunicationItems(List<CommunicationItem> communicationItems) {
         this.communicationItems = communicationItems;
@@ -138,5 +98,7 @@ public class CustomerImpl implements Customer, Serializable {
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
+
+  
     
 }

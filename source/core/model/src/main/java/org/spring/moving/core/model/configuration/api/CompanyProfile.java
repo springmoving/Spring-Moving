@@ -14,22 +14,39 @@
  * limitations under the License.
  */
 
-package org.spring.moving.core.model.api;
-
-import java.util.List;
+package org.spring.moving.core.model.configuration.api;
 
 /**
  *
  * @author Kristy Schoonover
  */
 
-public interface VanLine {
+public interface CompanyProfile {
     
-    public List<Agent> getAgents();
+    //Idenity
     public int getId();
-    public String getName();
-    public void setAgents(List<Agent> agents);
     public void setId(int id);
+    
+    //Name 
+    public String getName();
     public void setName(String name);
+    
+    
+    //Address 
+    public String getAddress1();
+    public void setAddress1(String address1);
+    public String getAddress2();
+    public void setAddress2(String address2);
+    public String getCity();
+    public void setCity(String city);
+    public String getState();
+    public void setState(String state);
+    public String getZipcode();
+    public void setZipcode(String zipcode);    
+    
+    
+    //Time Zone
+    public String getTimeZone();
+    public void setTimeZone(String name);
 
 }

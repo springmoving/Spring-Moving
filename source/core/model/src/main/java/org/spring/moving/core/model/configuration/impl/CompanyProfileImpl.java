@@ -13,83 +13,73 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.spring.moving.core.model.impl;
+package org.spring.moving.core.model.configuration.impl;
 
 import java.io.Serializable;
-import java.util.List;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import org.spring.moving.core.model.api.Account;
-import org.spring.moving.core.model.api.CommunicationItem;
-import org.spring.moving.core.model.api.Move;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import org.spring.moving.core.model.configuration.api.CompanyProfile;
 
 /**
  * 
  * @author Kristy Schoonover
  */
 @Entity
-@Table(name = "ACCOUNTS")
-public class AccountImpl implements Account, Serializable {
+@Table(name = "sm_company_profile")
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="profile_type",
+                     discriminatorType=DiscriminatorType.STRING)
 
+public class CompanyProfileImpl implements CompanyProfile, Serializable {
 
     private int id;
     private String name;
-
-    private String address1;
-    private String address2;
-    private String city;
-    private String state;
-    private String zipcode;
-    private List<CommunicationItem> communicationItems;
-    private List<Move> moves;
-
-
-    @OneToMany(mappedBy = "accounts")
-    @Override
-    public List<CommunicationItem> getCommunicationItems() {
-        return communicationItems;
-    }
-
+    
+    protected String address1;
+    protected String address2;
+    protected String city;
+    protected String state;
+    protected String zipcode;
+    
+    private String timeZone;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Override
     public int getId() {
         return id;
     }
-
-    @OneToMany(mappedBy = "accounts")
-    @Override
-    public List<Move> getMoves() {
-        return moves;
-    }
-
+    
     @Override
     public String getName() {
         return name;
     }
 
     @Override
-    public void setCommunicationItems(List<CommunicationItem> communicationItems) {
-        this.communicationItems = communicationItems;
+    public String getTimeZone() {
+        return timeZone;
     }
-
+    
     @Override
     public void setId(int id) {
         this.id = id;
     }
-
-    @Override
-    public void setMoves(List<Move> moves) {
-        this.moves = moves;
-    }
-
+    
     @Override
     public void setName(String name) {
         this.name = name;
+    }
+    
+    @Override
+    public void setTimeZone(String timeZone) {
+        this.timeZone = timeZone;
     }
 
     @Override
@@ -141,6 +131,6 @@ public class AccountImpl implements Account, Serializable {
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
-
-
+ 
+    
 }

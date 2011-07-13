@@ -13,28 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.spring.moving.core.model.impl;
+package org.spring.moving.core.model.configuration.impl;
 
 import java.util.List;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.OneToMany;
-import javax.persistence.Id;
 import org.spring.moving.core.model.api.Account;
-import org.spring.moving.core.model.api.ServiceProvider;
+import org.spring.moving.core.model.api.CommunicationItem;
+import org.spring.moving.core.model.configuration.api.ServiceProvider;
 
 /**
  * 
  * @author Kristy Schoonover
  */
 @Entity
-@Table(name = "SERVICE_PROVIDERS")
+@DiscriminatorValue("ServiceProvider")
 public class ServiceProviderImpl extends CompanyProfileImpl implements ServiceProvider {
 
+       
     private List<Account> accounts;
-    private int id;
+    private List<CommunicationItem> communicationItems;
+    
     
     @OneToMany(mappedBy="serviceProvider")
     @Override
@@ -42,12 +42,6 @@ public class ServiceProviderImpl extends CompanyProfileImpl implements ServicePr
         return accounts;
     }
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Override
-    public int getId() {
-        return id;
-    }
     
     @Override
     public void setAccounts(List<Account> accounts) {
@@ -55,8 +49,15 @@ public class ServiceProviderImpl extends CompanyProfileImpl implements ServicePr
     }
   
     @Override
-    public void setId(int id) {
-        this.id = id;
+    public List<CommunicationItem> getCommunicationItems() {
+        return communicationItems;
     }
-        
+
+    @Override
+    public void setCommunicationItems(List<CommunicationItem> communicationItems) {
+        this.communicationItems = communicationItems;
+    }
+
+ 
+    
 }

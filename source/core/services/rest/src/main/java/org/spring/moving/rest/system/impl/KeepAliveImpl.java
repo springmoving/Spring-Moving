@@ -13,21 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.spring.moving.rest.system.impl;
 
-package org.spring.moving.core.model.api;
-
-import java.util.List;
+import org.spring.moving.rest.system.api.KeepAlive;
+import org.springframework.stereotype.Service;
 
 /**
  *
- * @author Kristy Schoonover
+ * @author Brad Messerle
  */
 
-public interface Local {
-    
-    public List<Customer> getCustomers();
-    public int getId();
-    public void setCustomers(List<Customer> customers);
-    public void setId(int id);
+@Service("KeepAliveService")
+public class KeepAliveImpl implements KeepAlive {
 
+    @Override
+    public Boolean isAlive() {
+        return true;
+    }
+    
+    
+    
+    
+    
+    
 }

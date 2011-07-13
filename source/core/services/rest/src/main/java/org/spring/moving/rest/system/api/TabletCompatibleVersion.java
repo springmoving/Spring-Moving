@@ -13,19 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package org.spring.moving.core.model.api;
+package org.spring.moving.rest.system.api;
 
 /**
  *
- * @author Kristy Schoonover
+ * Service to return compatible tablet versions 
+ * 
+ * @author Brad Messerle
  */
-
-public interface SystemConfiguration {
+public interface TabletCompatibleVersion {
     
-    public CompanyProfile getCompanyProfile();
-    public int getId();
-    public void setCompanyProfile(CompanyProfile companyProfile);
-    public void setId(int id);
+    public String getVersion();
     
+   
 }

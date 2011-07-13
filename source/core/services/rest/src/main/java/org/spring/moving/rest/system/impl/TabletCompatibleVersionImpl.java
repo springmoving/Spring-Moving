@@ -13,27 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.spring.moving.rest.system.impl;
 
-package org.spring.moving.core.model.api;
+import org.spring.moving.rest.system.api.TabletCompatibleVersion;
+import org.springframework.stereotype.Service;
 
 /**
  *
- * @author Kristy Schoonover
+ * @author Brad Messerle
  */
+@Service("TabletCompatibleVersionService")
+public class TabletCompatibleVersionImpl implements TabletCompatibleVersion {
 
-public interface CommunicationItem {
-    
-    
-    //Idenity
-    public int getId();
-    public void setId(int id);
-    
-    //Name
-    public String getName();
-    public void setName(String name);
-    
-    //Value
-    public String getValue();
-    public void setValue(String value);
+    @Override
+    public String getVersion() {
+        return "0.0.1";
+    }
     
 }

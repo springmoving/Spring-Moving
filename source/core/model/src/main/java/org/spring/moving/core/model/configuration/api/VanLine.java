@@ -14,20 +14,22 @@
  * limitations under the License.
  */
 
-package org.spring.moving.core.model.api;
+package org.spring.moving.core.model.configuration.api;
 
 import java.util.List;
+import org.spring.moving.core.model.api.Agent;
 
 /**
  *
  * @author Kristy Schoonover
  */
 
-public interface ServiceProvider {
+public interface VanLine extends CompanyProfile {
     
-    public List<Account> getAccounts();
-    public int getId();
-    public void setAccounts(List<Account> accounts);
-    public void setId(int id);
+    
+    //Relationships
+    public List<Agent> getAgents(); 
+    public void setAgents(List<Agent> agents);
+   
 
 }

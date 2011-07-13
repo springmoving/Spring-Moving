@@ -7,11 +7,11 @@
         <artifactId>spring-moving-parent</artifactId>
         <version>MAIN-SNAPSHOT</version>
     </parent>
-    <groupId>spring.moving.org.core</groupId>
-    <artifactId>spring-moving-core</artifactId>
+    <groupId>spring.moving.org.services</groupId>
+    <artifactId>spring-moving-services</artifactId>
     <version>MAIN-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Spring Moving - Core Modules</name>
+    <name>Spring Moving - Core - Services Modules</name>
     <organization>
         <name>The Spring Moving Open Source Project</name>
     </organization>
@@ -27,16 +27,6 @@
         </developer>
     </developers>
     <modules>
-        <module>model</module>
-        <module>services</module>
+        <module>rest</module>
     </modules>
-    
-    <dependencies>
-        <dependency>
-            <groupId>javax.mail</groupId>
-            <artifactId>mail</artifactId>
-            <version>1.4</version>
-        </dependency>
-    </dependencies>
-    
 </project>

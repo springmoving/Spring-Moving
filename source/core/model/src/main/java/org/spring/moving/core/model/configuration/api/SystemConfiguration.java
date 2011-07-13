@@ -14,26 +14,24 @@
  * limitations under the License.
  */
 
-package org.spring.moving.core.model.api;
+package org.spring.moving.core.model.configuration.api;
 
 /**
  *
  * @author Kristy Schoonover
  */
 
-public interface CommunicationItem {
-    
+public interface SystemConfiguration {
     
     //Idenity
     public int getId();
     public void setId(int id);
+   
     
-    //Name
-    public String getName();
-    public void setName(String name);
+    //Relationships
+    public CompanyProfile getCompanyProfile();
+    public void setCompanyProfile(CompanyProfile companyProfile);
     
-    //Value
-    public String getValue();
-    public void setValue(String value);
+    
     
 }

@@ -13,27 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package org.spring.moving.core.model.api;
+package org.spring.moving.rest.system.api;
 
 /**
+ * 
+ * Service to return the current version of the server software
  *
- * @author Kristy Schoonover
+ * @author Brad Messerle
  */
-
-public interface CommunicationItem {
+public interface Version {
     
-    
-    //Idenity
-    public int getId();
-    public void setId(int id);
-    
-    //Name
-    public String getName();
-    public void setName(String name);
-    
-    //Value
-    public String getValue();
-    public void setValue(String value);
+    public String getVersion();
     
 }

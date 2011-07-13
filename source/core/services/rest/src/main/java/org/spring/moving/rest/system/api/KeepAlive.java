@@ -13,27 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package org.spring.moving.core.model.api;
+package org.spring.moving.rest.system.api;
 
 /**
  *
- * @author Kristy Schoonover
+ * Service to confirm that the server is running.
+ * 
+ * @author Brad Messerle
  */
-
-public interface CommunicationItem {
-    
-    
-    //Idenity
-    public int getId();
-    public void setId(int id);
-    
-    //Name
-    public String getName();
-    public void setName(String name);
-    
-    //Value
-    public String getValue();
-    public void setValue(String value);
+public interface KeepAlive {
+ 
+    public Boolean isAlive();
     
 }

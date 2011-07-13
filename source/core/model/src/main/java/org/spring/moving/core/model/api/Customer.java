@@ -25,18 +25,12 @@ import java.util.List;
 
 public interface Customer {
     
-    public String getAddress1();
-    public String getAddress2();
-    public String getCity();
+    
+
     public List<CommunicationItem> getCommunicationItems();
     public int getId();
     public List<Move> getMoves();
     public String getName();
-    public String getState();
-    public String getZipCode();
-    public void setAddress1(String address1);
-    public void setAddress2(String address2);
-    public void setCity(String city);
     public void setCommunicationItems(List<CommunicationItem> communicationItems);
     public void setId(int id);
     public void setMoves(List<Move> moves);

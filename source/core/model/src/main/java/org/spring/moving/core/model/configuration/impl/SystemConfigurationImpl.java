@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.spring.moving.core.model.impl;
+package org.spring.moving.core.model.configuration.impl;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -21,19 +21,20 @@ import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import org.spring.moving.core.model.api.CompanyProfile;
-import org.spring.moving.core.model.api.SystemConfiguration;
+import org.spring.moving.core.model.configuration.api.CompanyProfile;
+import org.spring.moving.core.model.configuration.api.SystemConfiguration;
 
 /**
  * 
  * @author Kristy Schoonover
  */
 @Entity
-@Table(name = "SYSTEM_CONFIGURATION")
+@Table(name = "sm_system_configuration")
 public class SystemConfigurationImpl implements SystemConfiguration, Serializable {
 
-    private CompanyProfile companyProfile;
+    
     private int id;
+    private CompanyProfile companyProfile;
 
     @Override
     public CompanyProfile getCompanyProfile() {
