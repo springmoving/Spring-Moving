@@ -22,7 +22,6 @@ import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import org.spring.moving.core.model.api.CommunicationItem;
 import org.spring.moving.core.model.api.Customer;
@@ -40,7 +39,11 @@ public class CustomerImpl implements Customer, Serializable {
     private int id;
     private List<Move> moves;
     private String name;
+    private String state;
+    private String zipCode;
     
+
+
     
     @OneToMany(mappedBy="customers")
     @Override
@@ -65,8 +68,7 @@ public class CustomerImpl implements Customer, Serializable {
     public String getName() {
         return name;
     }
-    
-    
+        
     @Override
     public void setCommunicationItems(List<CommunicationItem> communicationItems) {
         this.communicationItems = communicationItems;
@@ -86,5 +88,17 @@ public class CustomerImpl implements Customer, Serializable {
     public void setName(String name) {
         this.name = name;
     }
+    
+    @Override
+    public void setState(String state) {
+        this.state = state;
+    }
+    
+    @Override
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+  
     
 }

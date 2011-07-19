@@ -26,6 +26,7 @@ import java.util.List;
 public interface Customer {
     
     
+
     public List<CommunicationItem> getCommunicationItems();
     public int getId();
     public List<Move> getMoves();
@@ -34,5 +35,6 @@ public interface Customer {
     public void setId(int id);
     public void setMoves(List<Move> moves);
     public void setName(String name);
-    
+    public void setState(String state);
+    public void setZipCode(String zipCode);
 }

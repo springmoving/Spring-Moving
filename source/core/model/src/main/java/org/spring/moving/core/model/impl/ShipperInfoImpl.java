@@ -34,10 +34,14 @@ import org.spring.moving.core.model.api.ShipperInfo;
 @Table(name = "SHIPPER_INFOS")
 public class ShipperInfoImpl implements ShipperInfo, Serializable {
 
+
+
    private List<CommunicationItem> communicationItems;
    private String firstName;
    private int id;
    private String lastName;
+   private String state;
+   private String zipCode;
    
    
    @OneToMany(mappedBy="shipperInfo")
@@ -62,7 +66,7 @@ public class ShipperInfoImpl implements ShipperInfo, Serializable {
    public String getLastName() {
        return lastName;
    }
-   
+  
    
    @Override
    public void setCommunicationItems(List<CommunicationItem> communicationItems) {
@@ -83,5 +87,15 @@ public class ShipperInfoImpl implements ShipperInfo, Serializable {
    public void setLastName(String lastName) {
         this.lastName = lastName;
    }
-    
+   
+   @Override
+   public void setState(String state) {
+       this.state = state;
+   }
+   
+   @Override
+   public void setZipCode(String zipCode) {
+       this.zipCode = zipCode;
+   }
+
 }

@@ -24,7 +24,9 @@ import java.util.List;
  */
 
 public interface ShipperInfo {
+
     
+
     public List<CommunicationItem> getCommunicationItems();
     public String getFirstName();
     public int getId();
@@ -33,5 +35,6 @@ public interface ShipperInfo {
     public void setFirstName(String firstName);
     public void setId(int id);
     public void setLastName(String lastName);
-    
+    public void setState(String state);
+    public void setZipCode(String zipCode);
 }

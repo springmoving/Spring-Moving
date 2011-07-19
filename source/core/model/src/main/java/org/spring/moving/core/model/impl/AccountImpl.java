@@ -35,8 +35,10 @@ import org.spring.moving.core.model.api.Move;
 @Table(name = "ACCOUNTS")
 public class AccountImpl implements Account, Serializable {
 
+
     private int id;
     private String name;
+
     private String address1;
     private String address2;
     private String city;
@@ -44,6 +46,7 @@ public class AccountImpl implements Account, Serializable {
     private String zipcode;
     private List<CommunicationItem> communicationItems;
     private List<Move> moves;
+
 
     @OneToMany(mappedBy = "accounts")
     @Override
@@ -138,4 +141,6 @@ public class AccountImpl implements Account, Serializable {
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
+
+
 }

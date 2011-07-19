@@ -25,6 +25,7 @@ import java.util.List;
 
 public interface Account {
     
+
     
     // Idenity 
     public int getId();
@@ -51,5 +52,6 @@ public interface Account {
     public void setMoves(List<Move> moves);
     public List<CommunicationItem> getCommunicationItems();
     public void setCommunicationItems(List<CommunicationItem> communicationItems);  
+
 
 }
