@@ -3,15 +3,15 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.spring.moving</groupId>
-        <artifactId>spring-moving-parent</artifactId>
-        <version>MAIN-SNAPSHOT</version>
+       <groupId>spring.moving.org.core.persistence.repositores</groupId>
+       <artifactId>spring-moving-core-persistence-repositories</artifactId>
+       <version>MAIN-SNAPSHOT</version>
     </parent>
-    <groupId>spring.moving.org.core</groupId>
-    <artifactId>spring-moving-core</artifactId>
+    <groupId>spring.moving.org.core.persistence.repositores.jpa</groupId>
+    <artifactId>spring-moving-core-persistence-repositories-jpa</artifactId>
     <version>MAIN-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>Spring Moving - Core Modules</name>
+    <packaging>jar</packaging>
+    <name>Spring Moving - Core - Persistence - Repositories - Jpa Modules</name>
     <organization>
         <name>The Spring Moving Open Source Project</name>
     </organization>
@@ -20,24 +20,11 @@
             <id>bradmesserle</id>
             <name>Brad Messerle</name>
             <email>bradmesserle@gmail.com</email>
-            <organization>spring-moving.org</organization>
+            <organization>springmoving.org</organization>
             <roles>
                 <role>developer</role>
             </roles>
         </developer>
     </developers>
-    <modules>
-        <module>model</module>
-        <module>services</module>
-        <module>persistence</module>
-    </modules>
-    
-    <dependencies>
-        <dependency>
-            <groupId>javax.mail</groupId>
-            <artifactId>mail</artifactId>
-            <version>1.4</version>
-        </dependency>
-    </dependencies>
     
 </project>
