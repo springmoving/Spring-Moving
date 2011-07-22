@@ -7,11 +7,11 @@
         <artifactId>spring-moving-services</artifactId>
         <version>MAIN-SNAPSHOT</version>
     </parent>
-    <groupId>spring.moving.org.services.rest</groupId>
-    <artifactId>spring-moving-services-rest</artifactId>
+    <groupId>spring.moving.org.web</groupId>
+    <artifactId>spring-moving-web</artifactId>
     <version>MAIN-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    <name>Spring Moving - Core - Services - Rest Services Module</name>
+    <packaging>war</packaging>
+    <name>Spring Moving - Core - Web - War Module</name>
     <organization>
         <name>The Spring Moving Open Source Project</name>
     </organization>
@@ -20,7 +20,7 @@
             <id>bradmesserle</id>
             <name>Brad Messerle</name>
             <email>bradmesserle@gmail.com</email>
-            <organization></organization>
+            <organization>springmoving.org</organization>
             <roles>
                 <role>developer</role>
             </roles>
@@ -32,13 +32,21 @@
    
         
         <!-- Spring Moving Dependencies -->
-        
         <dependency>
             <groupId>spring.moving.org.model</groupId>
             <artifactId>spring-moving-model</artifactId>
             <version>MAIN-SNAPSHOT</version>
         </dependency>
-
+        <dependency>
+            <groupId>spring.moving.org.services.rest</groupId>
+            <artifactId>spring-moving-services-rest</artifactId>
+            <version>MAIN-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>spring.moving.org.core.persistence.repositores.jpa</groupId>
+            <artifactId>spring-moving-core-persistence-repositories-jpa</artifactId>
+            <version>MAIN-SNAPSHOT</version>
+        </dependency>
 
      </dependencies>
 
