@@ -10,8 +10,8 @@
                                 http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd" >
 
 
-   <context:component-scan  base-package="com.mms.service"/>
-   <context:component-scan  base-package="com.mms.rest"/>
+   <context:component-scan  base-package="org.spring.moving.rest"/>
+
 
    <context:annotation-config/>
    <!-- Configures the @Controller programming model -->
@@ -43,7 +43,7 @@
 
      <!-- Jackson ObjectMapper that can serialize and deserialize to and from JSON.
      The ObjectMapper is similar to JAXB marshallers. -->
-    <bean class="mms.spring.json.support.MapUnwrappingObjectMapper" id="jacksonObjectMapper"/>
+    <bean class="spring.json.support.MapUnwrappingObjectMapper" id="jacksonObjectMapper"/>
 
   
 

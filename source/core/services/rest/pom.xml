@@ -31,14 +31,36 @@
    <dependencies>
    
         
-        <!-- Spring Moving Dependencies -->
-        
+        <!-- Spring Moving Dependencies -->        
         <dependency>
             <groupId>spring.moving.org.model</groupId>
             <artifactId>spring-moving-model</artifactId>
             <version>MAIN-SNAPSHOT</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.5.10</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.7.1</version>
+        </dependency>   
+
+       <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.7.1</version>
+       </dependency>
+       
+       <dependency>
+           <groupId>org.codehaus.jackson</groupId>
+           <artifactId>jackson-xc</artifactId>
+           <version>1.7.1</version>
+       </dependency>
 
      </dependencies>
 
