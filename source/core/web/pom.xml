@@ -3,12 +3,12 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>spring.moving.org.services</groupId>
-        <artifactId>spring-moving-services</artifactId>
+        <groupId>spring.moving.org.core</groupId>
+        <artifactId>spring-moving-core</artifactId>
         <version>MAIN-SNAPSHOT</version>
     </parent>
-    <groupId>spring.moving.org.web</groupId>
-    <artifactId>spring-moving-web</artifactId>
+    <groupId>spring.moving.org.core.web</groupId>
+    <artifactId>spring-moving-core-web</artifactId>
     <version>MAIN-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>Spring Moving - Core - Web - War Module</name>

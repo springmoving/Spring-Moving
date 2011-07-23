@@ -28,8 +28,9 @@
     </developers>
     <modules>
         <module>model</module>
-        <module>services</module>
         <module>persistence</module>
+        <module>services</module>
+        <module>web</module>
     </modules>
     
     <dependencies>

@@ -10,8 +10,7 @@
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
                 <property name="showSql" value="true" />
-                <property name="generateDdl" value="true" />
-                <property name="database" value="HSQL" />
+                <property name="database" value="Derby" />
             </bean>
         </property>
     </bean>
@@ -20,6 +19,7 @@
         <property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>
 
-    <jdbc:embedded-database id="dataSource" type="HSQL" />
+    <jdbc:embedded-database id="dataSource" type="DERBY" />
+    
 
 </beans>

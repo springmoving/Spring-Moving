@@ -1,0 +1,13 @@
+<sun-web-app>
+    <context-root>smservices</context-root>
+    
+    <security-role-mapping>
+    	<role-name>user</role-name>
+    	<group-name>user</group-name>
+    </security-role-mapping>
+    <security-role-mapping>
+    	<role-name>admin</role-name>
+    	<group-name>admin</group-name>
+    </security-role-mapping>
+    
+</sun-web-app>
