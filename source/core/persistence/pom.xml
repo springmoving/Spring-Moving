@@ -30,18 +30,6 @@
         <module>repositories</module>
     </modules>
     
-    <properties>
-		<spring.version>3.0.5.RELEASE</spring.version>
-		<jpa.version>2.0.0</jpa.version>
-		<junit.version>4.8</junit.version>
-		<hibernate.version>3.5.6-Final</hibernate.version>
-		<slf4j.version>1.6.1</slf4j.version>
-		<aspectj.version>1.6.8</aspectj.version>
-		<jodatime.version>1.5.2</jodatime.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-    
-    
     <dependencies>
    
         <!-- Spring Moving Dependencies -->
@@ -51,12 +39,8 @@
             <version>MAIN-SNAPSHOT</version>
         </dependency>
 
+        <!-- Persistence Framework Dependencies -->
 
-        <dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-jpa</artifactId>
-			<version>1.0.0.RC1</version>
-		</dependency>
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.0-api</artifactId>
