@@ -15,14 +15,14 @@
  */
 package org.spring.moving.data.repositories;
 
-import org.spring.moving.core.model.configuration.impl.SystemConfigurationImpl;
+import org.spring.moving.core.model.configuration.api.SystemConfiguration;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author Brad Messerle
  */
-public interface SystemConfigurationRepository extends CrudRepository<SystemConfigurationImpl, Long> {
+public interface SystemConfigurationRepository extends CrudRepository<SystemConfiguration, Long> {
     
     
     

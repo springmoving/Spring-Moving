@@ -4,22 +4,19 @@
     xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
     	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
+
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="dataSource" ref="dataSource" />
-        <property name="persistenceUnitName" value="spring-jpa" />
-        <property name="jpaVendorAdapter">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-                <property name="showSql" value="true" />
-                <property name="database" value="DERBY" />
-            </bean>
-        </property>
+        <property name="persistenceUnitName" value="spring-jpa"/>
+  	<property name="loadTimeWeaver">
+    		<bean class="org.springframework.instrument.classloading.glassfish.GlassFishLoadTimeWeaver"/>
+  	</property>
     </bean>
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>
 
-    <jdbc:embedded-database id="dataSource" type="DERBY" />
+    
     
 
 </beans>

@@ -24,8 +24,8 @@ package org.spring.moving.core.model.configuration.api;
 public interface SystemConfiguration {
     
     //Idenity
-    public int getId();
-    public void setId(int id);
+    public Long getId();
+    public void setId(Long id);
    
     
     //Relationships
