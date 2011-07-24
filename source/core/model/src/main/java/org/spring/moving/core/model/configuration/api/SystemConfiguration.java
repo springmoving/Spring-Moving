@@ -16,6 +16,8 @@
 
 package org.spring.moving.core.model.configuration.api;
 
+import org.spring.moving.core.model.configuration.impl.CompanyProfileImpl;
+
 /**
  *
  * @author Kristy Schoonover
@@ -29,8 +31,8 @@ public interface SystemConfiguration {
    
     
     //Relationships
-    //public CompanyProfile getCompanyProfile();
-    //public void setCompanyProfile(CompanyProfile companyProfile);
+    public CompanyProfileImpl getCompanyProfile();
+    public void setCompanyProfile(CompanyProfileImpl companyProfile);
     
     
     

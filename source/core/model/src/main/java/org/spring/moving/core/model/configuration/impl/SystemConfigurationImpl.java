@@ -22,7 +22,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-import org.spring.moving.core.model.configuration.api.CompanyProfile;
 import org.spring.moving.core.model.configuration.api.SystemConfiguration;
 
 /**
@@ -39,13 +38,13 @@ public class SystemConfigurationImpl implements SystemConfiguration, Serializabl
     private Long id;
     
     
-    //@OneToOne
-    //private CompanyProfile companyProfile;
+    @OneToOne
+    private CompanyProfileImpl companyProfile;
 
-    //@Override
-    //public CompanyProfile getCompanyProfile() {
-    //    return companyProfile;
-    //}
+    @Override
+    public CompanyProfileImpl getCompanyProfile() {
+        return companyProfile;
+    }
     
    
     @Override
@@ -53,10 +52,10 @@ public class SystemConfigurationImpl implements SystemConfiguration, Serializabl
         return id;
     }
     
-    //@Override
-    //public void setCompanyProfile(CompanyProfile companyProfile) {
-    //    this.companyProfile = companyProfile;
-    //}
+    @Override
+    public void setCompanyProfile(CompanyProfileImpl companyProfile) {
+        this.companyProfile = companyProfile;
+    }
     
     @Override
     public void setId(Long id) {

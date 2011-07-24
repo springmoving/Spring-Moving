@@ -39,7 +39,11 @@ import org.spring.moving.core.model.configuration.api.CompanyProfile;
 
 public class CompanyProfileImpl implements CompanyProfile, Serializable {
 
-    private int id;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
     private String name;
     
     protected String address1;
@@ -50,10 +54,8 @@ public class CompanyProfileImpl implements CompanyProfile, Serializable {
     
     private String timeZone;
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Override
-    public int getId() {
+    public Long getId() {
         return id;
     }
     
@@ -68,7 +70,7 @@ public class CompanyProfileImpl implements CompanyProfile, Serializable {
     }
     
     @Override
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
     
