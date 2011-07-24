@@ -20,8 +20,8 @@ import java.util.List;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import org.spring.moving.core.model.api.Agent;
-import org.spring.moving.core.model.configuration.api.VanLine;
+import org.spring.moving.core.domain.account.api.Agent;
+import org.spring.moving.core.domain.configuration.api.VanLine;
 
 /**
  * 

@@ -22,8 +22,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import org.spring.moving.core.model.api.Customer;
-import org.spring.moving.core.model.configuration.api.Local;
+import org.spring.moving.core.domain.account.api.Customer;
+import org.spring.moving.core.domain.configuration.api.Local;
 
 /**
  * 

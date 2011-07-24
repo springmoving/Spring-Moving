@@ -25,7 +25,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import org.spring.moving.core.model.configuration.api.CompanyProfile;
+import org.spring.moving.core.domain.configuration.api.CompanyProfile;
 
 /**
  * 

@@ -19,8 +19,8 @@ import java.util.List;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import org.spring.moving.core.model.api.Account;
-import org.spring.moving.core.model.configuration.api.ServiceProvider;
+import org.spring.moving.core.domain.account.api.Account;
+import org.spring.moving.core.domain.configuration.api.ServiceProvider;
 
 /**
  * 
@@ -47,17 +47,6 @@ public class ServiceProviderImpl extends CompanyProfileImpl implements ServicePr
     public void setAccounts(List<Account> accounts) {
         this.accounts = accounts;
     }
-  
-//    @Override
-//    public List<CommunicationItem> getCommunicationItems() {
-//        return communicationItems;
-//    }
-//
-//    @Override
-//    public void setCommunicationItems(List<CommunicationItem> communicationItems) {
-//        this.communicationItems = communicationItems;
-//    }
-
- 
+   
     
 }

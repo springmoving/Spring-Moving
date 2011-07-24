@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.spring.moving.core.model.impl;
+package org.spring.moving.core.model.account.impl;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -22,40 +22,39 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import org.spring.moving.core.model.api.Account;
-import org.spring.moving.core.model.api.Customer;
-import org.spring.moving.core.model.configuration.api.Local;
+import javax.persistence.OneToMany;
+import org.spring.moving.core.domain.account.api.Account;
+import org.spring.moving.core.domain.account.api.Customer;
+import org.spring.moving.core.model.configuration.impl.ServiceProviderImpl;
 
 /**
  * 
  * @author Kristy Schoonover
  */
 @Entity
-@Table(name = "sm_customer")
-public class CustomerImpl implements Customer, Serializable {
+@Table(name = "sm_account")
+public class AccountImpl implements Account, Serializable {
 
 
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
     private String name;
-   
+
     private String address1;
     private String address2;
     private String city;
     private String state;
     private String zipcode;
     
-    
     //Relationships
-    @ManyToOne()    
-    private Local localCompanyProfile;
+    @OneToMany(mappedBy="")
+    private Customer customers;
     @ManyToOne()
-    private Account account;
+    private ServiceProviderImpl serviceProvider;
     
-    
+//    @OneToMany(mappedBy="")
+//    private List<CommunicationItem> communicationItems;
     
     
     @Override
@@ -63,26 +62,34 @@ public class CustomerImpl implements Customer, Serializable {
         return id;
     }
     
-    
     @Override
     public void setId(Long id) {
         this.id = id;
     }    
     
 
-    
     @Override
     public String getName() {
         return name;
     }
-    
+
     @Override
     public void setName(String name) {
         this.name = name;
-    }    
-    
- 
+    }
 
+    
+    @Override
+    public Customer getCustomers() {
+        return customers;
+    }
+
+    @Override
+    public void setCustomers(Customer customers) {
+        this.customers = customers;
+    }
+    
+      
     @Override
     public String getAddress1() {
         return address1;
@@ -132,29 +139,8 @@ public class CustomerImpl implements Customer, Serializable {
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
-    
-    @Override
-    public Local getLocalCompanyProfile() {
-        return localCompanyProfile;
-    }
 
-    @Override
-    public void setLocalCompanyProfile(Local localCompanyProfile) {
-        this.localCompanyProfile = localCompanyProfile;
-    }
-    
-    
-    @Override
-    public Account getAccount() {
-        return account;
-    }
-
-    @Override
-    public void setAccount(Account account) {
-        this.account = account;
-    }
-    
    
-      
-    
+
+
 }

@@ -13,20 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.spring.moving.core.model.impl;
+package org.spring.moving.core.model.account.impl;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import org.spring.moving.core.model.api.Agent;
-import org.spring.moving.core.model.api.Move;
-import org.spring.moving.core.model.configuration.api.VanLine;
+import org.spring.moving.core.domain.account.api.Agent;
+import org.spring.moving.core.domain.configuration.api.VanLine;
 
 /**
  * 
@@ -68,10 +65,12 @@ public class AgentImpl implements Agent, Serializable {
         this.name = name;
     }
 
+    @Override
     public VanLine getVanLine() {
         return vanLine;
     }
 
+    @Override
     public void setVanLine(VanLine vanLine) {
         this.vanLine = vanLine;
     }
