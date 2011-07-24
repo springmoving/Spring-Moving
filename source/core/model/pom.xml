@@ -26,8 +26,11 @@
             </roles>
         </developer>
     </developers>
-    
-    
-    
-    
+    <dependencies>
+        <dependency>
+            <groupId>spring.moving.org.domain</groupId>
+            <artifactId>spring-moving-domain</artifactId>
+            <version>MAIN-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
