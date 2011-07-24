@@ -29,8 +29,8 @@ public interface SystemConfiguration {
    
     
     //Relationships
-    public CompanyProfile getCompanyProfile();
-    public void setCompanyProfile(CompanyProfile companyProfile);
+    //public CompanyProfile getCompanyProfile();
+    //public void setCompanyProfile(CompanyProfile companyProfile);
     
     
     

@@ -3,9 +3,9 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-       <groupId>spring.moving.org.core.persistence.repositores</groupId>
-       <artifactId>spring-moving-core-persistence-repositories</artifactId>
-       <version>MAIN-SNAPSHOT</version>
+        <groupId>spring.moving.org.core.persistence.repositores</groupId>
+        <artifactId>spring-moving-core-persistence-repositories</artifactId>
+        <version>MAIN-SNAPSHOT</version>
     </parent>
     <groupId>spring.moving.org.core.persistence.repositores.jpa</groupId>
     <artifactId>spring-moving-core-persistence-repositories-jpa</artifactId>
@@ -26,5 +26,14 @@
             </roles>
         </developer>
     </developers>
+    
+    <dependencies>
+        <dependency>
+            <groupId>spring.moving.org.model</groupId>
+            <artifactId>spring-moving-model</artifactId>
+            <version>MAIN-SNAPSHOT</version>    
+        </dependency>
+    </dependencies>
+    
     
 </project>

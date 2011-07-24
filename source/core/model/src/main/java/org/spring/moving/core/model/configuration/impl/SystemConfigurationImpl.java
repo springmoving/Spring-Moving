@@ -39,13 +39,13 @@ public class SystemConfigurationImpl implements SystemConfiguration, Serializabl
     private Long id;
     
     
-    @OneToOne
-    private CompanyProfile companyProfile;
+    //@OneToOne
+    //private CompanyProfile companyProfile;
 
-    @Override
-    public CompanyProfile getCompanyProfile() {
-        return companyProfile;
-    }
+    //@Override
+    //public CompanyProfile getCompanyProfile() {
+    //    return companyProfile;
+    //}
     
    
     @Override
@@ -53,10 +53,10 @@ public class SystemConfigurationImpl implements SystemConfiguration, Serializabl
         return id;
     }
     
-    @Override
-    public void setCompanyProfile(CompanyProfile companyProfile) {
-        this.companyProfile = companyProfile;
-    }
+    //@Override
+    //public void setCompanyProfile(CompanyProfile companyProfile) {
+    //    this.companyProfile = companyProfile;
+    //}
     
     @Override
     public void setId(Long id) {
