@@ -16,7 +16,7 @@
 
 package org.spring.moving.core.model.api;
 
-import java.util.List;
+import org.spring.moving.core.model.impl.CustomerImpl;
 
 /**
  *
@@ -28,8 +28,8 @@ public interface Account {
 
     
     // Idenity 
-    public int getId();
-    public void setId(int id);
+    public Long getId();
+    public void setId(Long id);
     
     // Account Name
     public String getName();
@@ -48,10 +48,13 @@ public interface Account {
     public void setZipcode(String zipcode);
     
     //Relationships
-    public List<Move> getMoves();
-    public void setMoves(List<Move> moves);
-    public List<CommunicationItem> getCommunicationItems();
-    public void setCommunicationItems(List<CommunicationItem> communicationItems);  
+    public CustomerImpl getCustomers();
+    public void setCustomers(CustomerImpl customers);
+    
+//    public List<Move> getMoves();
+//    public void setMoves(List<Move> moves);
+//    public List<CommunicationItem> getCommunicationItems();
+//    public void setCommunicationItems(List<CommunicationItem> communicationItems);  
 
 
 }

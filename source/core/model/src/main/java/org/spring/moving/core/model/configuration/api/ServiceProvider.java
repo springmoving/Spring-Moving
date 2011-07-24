@@ -31,8 +31,8 @@ public interface ServiceProvider extends CompanyProfile {
     // Relationships
     public List<Account> getAccounts();
     public void setAccounts(List<Account> accounts);
-    public List<CommunicationItem> getCommunicationItems();
-    public void setCommunicationItems(List<CommunicationItem> communicationItems);
+//    public List<CommunicationItem> getCommunicationItems();
+//    public void setCommunicationItems(List<CommunicationItem> communicationItems);
     
 
 }

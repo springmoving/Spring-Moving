@@ -13,29 +13,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.spring.moving.core.model.configuration.impl;
 
-package org.spring.moving.core.model.api;
-
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import org.spring.moving.core.model.api.Agent;
 import org.spring.moving.core.model.configuration.api.VanLine;
 
 /**
- *
+ * 
  * @author Kristy Schoonover
  */
+@Entity
+@DiscriminatorValue("VanLine")
+public class VanLineImpl extends CompanyProfileImpl implements VanLine, Serializable {
 
-public interface Agent {
+    @OneToMany(mappedBy="vanLines")
+    private List<Agent> agents;
     
-    //Idenity
-    public Long getId();
-    public void setId(Long id);
+   
+    @Override
+    public List<Agent> getAgents() {
+        return agents;
+    }
     
-    // Agent Name
-    public String getName();
-    public void setName(String name);
     
-    //Relationships
-     public VanLine getVanLine();
-     public void setVanLine(VanLine vanLine);
-
-
+    @Override
+    public void setAgents(List<Agent> agents) {
+        this.agents = agents;
+    }
+        
 }

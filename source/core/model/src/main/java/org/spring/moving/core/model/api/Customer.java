@@ -16,7 +16,7 @@
 
 package org.spring.moving.core.model.api;
 
-import java.util.List;
+import org.spring.moving.core.model.configuration.api.Local;
 
 /**
  *
@@ -27,14 +27,42 @@ public interface Customer {
     
     
 
-    public List<CommunicationItem> getCommunicationItems();
-    public int getId();
-    public List<Move> getMoves();
+    //Identiy
+    public Long getId();
+    public void setId(Long id);
     public String getName();
-    public void setCommunicationItems(List<CommunicationItem> communicationItems);
-    public void setId(int id);
-    public void setMoves(List<Move> moves);
     public void setName(String name);
+    
+    
+    //Address
+    public String getAddress1();
+    public void setAddress1(String address1);
+    public String getAddress2();
+    public void setAddress2(String address2);
+    public String getCity();
+    public void setCity(String city);
+    public String getState();
     public void setState(String state);
-    public void setZipCode(String zipCode);
+    public String getZipcode();
+    public void setZipcode(String zipcode);   
+    
+    
+    //Relationships
+    
+    public Local getLocalCompanyProfile();
+    public void setLocalCompanyProfile(Local localCompanyProfile);
+    public Account getAccount();
+    public void setAccount(Account account);
+     
+   
+    
+//    public List<CommunicationItem> getCommunicationItems();
+//    public void setCommunicationItems(List<CommunicationItem> communicationItems);
+//    public List<Move> getMoves();
+//    public void setMoves(List<Move> moves);
+    
+    
+  
+    
+   
 }
