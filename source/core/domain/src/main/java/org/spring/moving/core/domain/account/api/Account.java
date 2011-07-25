@@ -18,7 +18,7 @@ package org.spring.moving.core.domain.account.api;
 
 /**
  *
- * @author Kristy Schoonover
+ * @author Brad Messerle
  */
 
 public interface Account {
