@@ -16,6 +16,8 @@
 
 package org.spring.moving.core.domain.account.api;
 
+import java.util.List;
+
 /**
  *
  * @author Brad Messerle
@@ -46,8 +48,8 @@ public interface Account {
     public void setZipcode(String zipcode);
     
     //Relationships
-    public Customer getCustomers();
-    public void setCustomers(Customer customers);
+    public List<Customer> getCustomers();
+    public void setCustomers(List<Customer> customers);
     
 //    public List<Move> getMoves();
 //    public void setMoves(List<Move> moves);

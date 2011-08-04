@@ -22,6 +22,7 @@ import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import org.spring.moving.core.domain.account.api.Account;
 import org.spring.moving.core.domain.account.api.Customer;
@@ -56,7 +57,7 @@ public class CustomerImpl implements Customer, Serializable {
     private Local localCompanyProfile;
     
     @ManyToOne()
-    @Column(name="accountid")
+    @JoinColumn(name="accountid")
     private Account account;
     
     

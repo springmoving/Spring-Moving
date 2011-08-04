@@ -16,6 +16,7 @@
 package org.spring.moving.core.model.account.impl;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
@@ -49,7 +50,7 @@ public class AccountImpl implements Account, Serializable {
     
     //Relationships
     @OneToMany(mappedBy="account")
-    private Customer customers;
+    private List<Customer> customers;
     
     @ManyToOne()
     private ServiceProviderImpl serviceProvider;
@@ -79,15 +80,23 @@ public class AccountImpl implements Account, Serializable {
         this.name = name;
     }
 
-    
+
     @Override
-    public Customer getCustomers() {
+    public List<Customer> getCustomers() {
         return customers;
     }
 
     @Override
-    public void setCustomers(Customer customers) {
+    public void setCustomers(List<Customer> customers) {
         this.customers = customers;
+    }
+
+    public ServiceProviderImpl getServiceProvider() {
+        return serviceProvider;
+    }
+
+    public void setServiceProvider(ServiceProviderImpl serviceProvider) {
+        this.serviceProvider = serviceProvider;
     }
     
       

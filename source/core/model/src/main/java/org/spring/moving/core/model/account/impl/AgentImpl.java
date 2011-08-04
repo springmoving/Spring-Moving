@@ -22,6 +22,7 @@ import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import org.spring.moving.core.domain.account.api.Agent;
 import org.spring.moving.core.domain.configuration.api.VanLine;
@@ -29,6 +30,7 @@ import org.spring.moving.core.domain.configuration.api.VanLine;
 /**
  * 
  * @author Kristy Schoonover
+ * @author Brad Messerle
  */
 @Entity
 @Table(name = "sm_agent")
@@ -42,7 +44,7 @@ public class AgentImpl implements Agent, Serializable {
     //Relationships
     
     @ManyToOne
-    @Column(name="vanlineid")
+    @JoinColumn(name="vanlineid")
     private VanLine vanLine;
    
     @Override
