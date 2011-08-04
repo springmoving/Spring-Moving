@@ -16,6 +16,7 @@
 package org.spring.moving.core.model.account.impl;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
@@ -50,11 +51,13 @@ public class CustomerImpl implements Customer, Serializable {
     
     
     //Relationships
-    @ManyToOne()    
+    @ManyToOne()   
+    @Column(name="localcompanyprofileid")
     private Local localCompanyProfile;
-    @ManyToOne()
-    private Account account;
     
+    @ManyToOne()
+    @Column(name="accountid")
+    private Account account;
     
     
     

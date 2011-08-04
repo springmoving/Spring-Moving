@@ -13,26 +13,23 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             
-            <column name="company_config" type="int"/>
+            <column name="company_profile" type="int"/>
         </createTable>
-
-        <createTable tableName="sm_company_config">
+        
+        <createTable tableName="sm_company_profile">
             <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            
-            <column name="profile_type" type="varchar(20)"/>
-            
-            <column name="name" type="varchar(150)"/>
+            <column name="name" type="varchar(100)"/>
             <column name="address1" type="varchar(100)"/>
             <column name="address2" type="varchar(100)"/>
             <column name="city" type="varchar(50)"/>
             <column name="state" type="varchar(10)"/> 
             <column name="zipcode" type="varchar(10)"/>
             
-            <column name="timezone" type="varchar(5)"/>              
-        </createTable>
-
+            <column name="profile_type" type="varchar(100)" />
+            <column name="timezone" type="varchar(10)" />
+        </createTable>              
 
         <createTable tableName="sm_account">
             <column name="id" type="int" autoIncrement="true">
@@ -44,6 +41,8 @@
             <column name="city" type="varchar(50)"/>
             <column name="state" type="varchar(10)"/> 
             <column name="zipcode" type="varchar(10)"/>
+            
+            <column name="serviceprovider" type"int" />
         </createTable>
 
         <createTable tableName="sm_customer">
@@ -56,23 +55,14 @@
             <column name="city" type="varchar(50)"/>
             <column name="state" type="varchar(10)"/> 
             <column name="zipcode" type="varchar(10)"/>
+            
+            <column name="localcompanyprofileid" type="int" />
+            <column name="accountid" type="int" />
+        
         </createTable>
         
-        <createTable tableName="sm_agent">
-            <column name="id" type="int" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="name" type="varchar(100)"/>
-            <column name="address1" type="varchar(100)"/>
-            <column name="address2" type="varchar(100)"/>
-            <column name="city" type="varchar(50)"/>
-            <column name="state" type="varchar(10)"/> 
-            <column name="zipcode" type="varchar(10)"/>
-        </createTable>        
-
-        
-        
-
+  
+    
     </changeSet>
  
 </databaseChangeLog>

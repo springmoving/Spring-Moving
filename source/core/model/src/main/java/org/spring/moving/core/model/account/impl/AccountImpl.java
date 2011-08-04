@@ -48,8 +48,9 @@ public class AccountImpl implements Account, Serializable {
     private String zipcode;
     
     //Relationships
-    @OneToMany(mappedBy="")
+    @OneToMany(mappedBy="account")
     private Customer customers;
+    
     @ManyToOne()
     private ServiceProviderImpl serviceProvider;
     

@@ -16,6 +16,7 @@
 package org.spring.moving.core.model.account.impl;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
@@ -41,6 +42,7 @@ public class AgentImpl implements Agent, Serializable {
     //Relationships
     
     @ManyToOne
+    @Column(name="vanlineid")
     private VanLine vanLine;
    
     @Override
