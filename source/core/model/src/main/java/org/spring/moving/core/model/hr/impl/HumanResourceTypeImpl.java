@@ -16,43 +16,38 @@
 package org.spring.moving.core.model.hr.impl;
 
 import java.io.Serializable;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 /**
  *
- * @author Brad Messerle
+ * @author bradmesserle
  */
 @Entity
-@Table(name="sm_human_resource_status")
-public class HumanResourceStatusImpl implements  Serializable {
+@Table(name="sm_human_resource_type")
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="hr_type",
+                     discriminatorType=DiscriminatorType.STRING)
+public class HumanResourceTypeImpl implements Serializable {
+    
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
 
-    
     public Long getId() {
         return id;
     }
 
-    
     public void setId(Long id) {
         this.id = id;
     }
-
     
-    public String getName() {
-        return name;
-    }
-
-    
-    public void setName(String name) {
-        this.name = name;
-    }
-        
 }

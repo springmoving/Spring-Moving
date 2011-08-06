@@ -22,7 +22,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import org.spring.moving.core.domain.hr.api.HumanResource;
 
 /**
  *
@@ -31,7 +30,7 @@ import org.spring.moving.core.domain.hr.api.HumanResource;
 
 @Entity
 @Table(name = "sm_human_resource")
-public class HumanResourceImpl implements HumanResource, Serializable {
+public class HumanResourceImpl implements  Serializable {
     
     
     @Id
@@ -57,122 +56,122 @@ public class HumanResourceImpl implements HumanResource, Serializable {
             
     
 
-    @Override
+    
     public Long getId() {
         return id;
     }
 
-    @Override
+    
     public void setId(Long id) {
         this.id = id;
     }
 
-    @Override
+    
     public String getFirstName() {
         return firstName;
     }
 
-    @Override
+    
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    @Override
+    
     public String getLastName() {
         return lastName;
     }
 
-    @Override
+    
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    @Override
+    
     public String getMiddleName() {
         return middleName;
     }
 
-    @Override
+    
     public void setMiddleName(String middleName) {
         this.middleName = middleName;
     }
 
-    @Override
+    
     public String getSuffixName() {
         return suffixName;
     }
 
-    @Override
+    
     public void setSuffixName(String suffixName) {
         this.suffixName = suffixName;
     }
 
-    @Override
+    
     public String getSurName() {
         return surName;
     }
 
-    @Override
+    
     public void setSurName(String surName) {
         this.surName = surName;
     }
 
-    @Override
+    
     public String getTitleName() {
         return titleName;
     }
 
-    @Override
+    
     public void setTitleName(String titleName) {
         this.titleName = titleName;
     }
 
-    @Override
+    
     public String getAddress1() {
         return address1;
     }
 
-    @Override
+    
     public void setAddress1(String address1) {
         this.address1 = address1;
     }
 
-    @Override
+    
     public String getAddress2() {
         return address2;
     }
 
-    @Override
+    
     public void setAddress2(String address2) {
         this.address2 = address2;
     }
 
-    @Override
+    
     public String getCity() {
         return city;
     }
 
-    @Override
+    
     public void setCity(String city) {
         this.city = city;
     }
 
-    @Override
+    
     public String getState() {
         return state;
     }
 
-    @Override
+    
     public void setState(String state) {
         this.state = state;
     }
 
-    @Override
+    
     public String getZipcode() {
         return zipcode;
     }
 
-    @Override
+    
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
