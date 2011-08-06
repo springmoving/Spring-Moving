@@ -19,7 +19,7 @@ package org.spring.moving.core.domain.hr.api;
  *
  * @author Brad Messerle
  */
-public interface Employee extends HumanResource {
+public interface HumanResourceEmployeeType extends HumanResourceType {
     
     
     

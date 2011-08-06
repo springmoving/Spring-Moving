@@ -19,6 +19,6 @@ package org.spring.moving.core.domain.hr.api;
  *
  * @author Brad Messerle
  */
-public interface HumanResourceContractorType extends HumanResource {
+public interface HumanResourceContractorType extends HumanResourceType {
     
 }
