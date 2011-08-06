@@ -16,7 +16,6 @@
 
 package org.spring.moving.core.domain.account.api;
 
-import org.spring.moving.core.domain.account.api.Account;
 import org.spring.moving.core.domain.configuration.api.Local;
 
 /**

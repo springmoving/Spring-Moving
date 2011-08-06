@@ -20,8 +20,7 @@ import java.util.List;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import org.spring.moving.core.domain.account.api.Agent;
-import org.spring.moving.core.domain.configuration.api.VanLine;
+import org.spring.moving.core.model.account.impl.AgentImpl;
 
 /**
  * 
@@ -29,20 +28,20 @@ import org.spring.moving.core.domain.configuration.api.VanLine;
  */
 @Entity
 @DiscriminatorValue("VanLine")
-public class VanLineImpl extends CompanyProfileImpl implements VanLine, Serializable {
+public class VanLineImpl extends CompanyProfileImpl implements  Serializable {
 
-    @OneToMany(mappedBy="vanLines")
-    private List<Agent> agents;
+    @OneToMany(mappedBy="vanLine")
+    private List<AgentImpl> agents;
     
    
-    @Override
-    public List<Agent> getAgents() {
+    
+    public List<AgentImpl> getAgents() {
         return agents;
     }
     
     
-    @Override
-    public void setAgents(List<Agent> agents) {
+    
+    public void setAgents(List<AgentImpl> agents) {
         this.agents = agents;
     }
         

@@ -16,7 +16,6 @@
 package org.spring.moving.core.model.account.impl;
 
 import java.io.Serializable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
@@ -24,8 +23,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import org.spring.moving.core.domain.account.api.Agent;
-import org.spring.moving.core.domain.configuration.api.VanLine;
+import org.spring.moving.core.model.configuration.impl.VanLineImpl;
 
 /**
  * 
@@ -34,7 +32,7 @@ import org.spring.moving.core.domain.configuration.api.VanLine;
  */
 @Entity
 @Table(name = "sm_agent")
-public class AgentImpl implements Agent, Serializable {
+public class AgentImpl implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,37 +43,37 @@ public class AgentImpl implements Agent, Serializable {
     
     @ManyToOne
     @JoinColumn(name="vanlineid")
-    private VanLine vanLine;
+    private VanLineImpl vanLine;
    
-    @Override
+    
     public Long getId() {
         return id;
     }
     
-    @Override
+    
     public void setId(Long id) {
         this.id = id;
     }    
     
        
-    @Override
+    
     public String getName() {
         return name;
     }
     
     
-    @Override
+    
     public void setName(String name) {
         this.name = name;
     }
 
-    @Override
-    public VanLine getVanLine() {
+    
+    public VanLineImpl getVanLine() {
         return vanLine;
     }
 
-    @Override
-    public void setVanLine(VanLine vanLine) {
+    
+    public void setVanLine(VanLineImpl vanLine) {
         this.vanLine = vanLine;
     }
     

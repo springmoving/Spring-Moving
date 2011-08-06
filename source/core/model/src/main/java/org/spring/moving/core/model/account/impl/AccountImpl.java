@@ -24,8 +24,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import org.spring.moving.core.domain.account.api.Account;
-import org.spring.moving.core.domain.account.api.Customer;
 import org.spring.moving.core.model.configuration.impl.ServiceProviderImpl;
 
 /**
@@ -34,7 +32,7 @@ import org.spring.moving.core.model.configuration.impl.ServiceProviderImpl;
  */
 @Entity
 @Table(name = "sm_account")
-public class AccountImpl implements Account, Serializable {
+public class AccountImpl implements Serializable {
 
 
     @Id
@@ -50,7 +48,7 @@ public class AccountImpl implements Account, Serializable {
     
     //Relationships
     @OneToMany(mappedBy="account")
-    private List<Customer> customers;
+    private List<CustomerImpl> customers;
     
     @ManyToOne()
     private ServiceProviderImpl serviceProvider;
@@ -59,35 +57,31 @@ public class AccountImpl implements Account, Serializable {
 //    private List<CommunicationItem> communicationItems;
     
     
-    @Override
+    
     public Long getId() {
         return id;
     }
     
-    @Override
+    
     public void setId(Long id) {
         this.id = id;
     }    
     
 
-    @Override
+    
     public String getName() {
         return name;
     }
-
-    @Override
+    
     public void setName(String name) {
         this.name = name;
     }
-
-
-    @Override
-    public List<Customer> getCustomers() {
+    
+    public List<CustomerImpl> getCustomers() {
         return customers;
     }
-
-    @Override
-    public void setCustomers(List<Customer> customers) {
+    
+    public void setCustomers(List<CustomerImpl> customers) {
         this.customers = customers;
     }
 
@@ -98,54 +92,52 @@ public class AccountImpl implements Account, Serializable {
     public void setServiceProvider(ServiceProviderImpl serviceProvider) {
         this.serviceProvider = serviceProvider;
     }
-    
-      
-    @Override
+        
     public String getAddress1() {
         return address1;
     }
 
-    @Override
+    
     public void setAddress1(String address1) {
         this.address1 = address1;
     }
 
-    @Override
+    
     public String getAddress2() {
         return address2;
     }
 
-    @Override
+    
     public void setAddress2(String address2) {
         this.address2 = address2;
     }
 
-    @Override
+    
     public String getCity() {
         return city;
     }
 
-    @Override
+    
     public void setCity(String city) {
         this.city = city;
     }
 
-    @Override
+    
     public String getState() {
         return state;
     }
 
-    @Override
+    
     public void setState(String state) {
         this.state = state;
     }
 
-    @Override
+    
     public String getZipcode() {
         return zipcode;
     }
 
-    @Override
+    
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }

@@ -25,11 +25,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import org.spring.moving.core.domain.configuration.api.CompanyProfile;
 
 /**
  * 
  * @author Kristy Schoonover
+ * @author Brad Messerle
  */
 @Entity
 @Table(name = "sm_company_profile")
@@ -37,7 +37,7 @@ import org.spring.moving.core.domain.configuration.api.CompanyProfile;
 @DiscriminatorColumn(name="profile_type",
                      discriminatorType=DiscriminatorType.STRING)
 
-public class CompanyProfileImpl implements CompanyProfile, Serializable {
+public class CompanyProfileImpl implements Serializable {
 
     
     @Id
@@ -54,82 +54,82 @@ public class CompanyProfileImpl implements CompanyProfile, Serializable {
     
     private String timeZone;
     
-    @Override
+    
     public Long getId() {
         return id;
     }
     
-    @Override
+    
     public String getName() {
         return name;
     }
 
-    @Override
+    
     public String getTimeZone() {
         return timeZone;
     }
     
-    @Override
+    
     public void setId(Long id) {
         this.id = id;
     }
     
-    @Override
+    
     public void setName(String name) {
         this.name = name;
     }
     
-    @Override
+    
     public void setTimeZone(String timeZone) {
         this.timeZone = timeZone;
     }
 
-    @Override
+    
     public String getAddress1() {
         return address1;
     }
 
-    @Override
+    
     public void setAddress1(String address1) {
         this.address1 = address1;
     }
 
-    @Override
+    
     public String getAddress2() {
         return address2;
     }
 
-    @Override
+    
     public void setAddress2(String address2) {
         this.address2 = address2;
     }
 
-    @Override
+    
     public String getCity() {
         return city;
     }
 
-    @Override
+    
     public void setCity(String city) {
         this.city = city;
     }
 
-    @Override
+    
     public String getState() {
         return state;
     }
 
-    @Override
+    
     public void setState(String state) {
         this.state = state;
     }
 
-    @Override
+    
     public String getZipcode() {
         return zipcode;
     }
 
-    @Override
+    
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }

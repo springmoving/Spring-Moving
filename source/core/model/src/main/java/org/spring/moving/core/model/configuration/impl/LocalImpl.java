@@ -15,57 +15,37 @@
  */
 package org.spring.moving.core.model.configuration.impl;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import org.spring.moving.core.domain.account.api.Customer;
-import org.spring.moving.core.domain.configuration.api.Local;
+import org.spring.moving.core.model.account.impl.CustomerImpl;
 
 /**
  * 
  * @author Kristy Schoonover
+ * @author Brad Messerle
  */
 @Entity
 @DiscriminatorValue("Local")
-public class LocalImpl extends CompanyProfileImpl implements Local {
+public class LocalImpl extends CompanyProfileImpl implements Serializable {
 
     
     @OneToMany(mappedBy="localCompanyProfile")
-    private List<Customer> customers;
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private List<CustomerImpl> customers;
+     
     
     
-    
-    
-    
-    @Override
-    public List<Customer> getCustomers() {
+    public List<CustomerImpl> getCustomers() {
         return customers;
     }
     
     
-    @Override
-    public void setCustomers(List<Customer> customers) {
+    
+    public void setCustomers(List<CustomerImpl> customers) {
         this.customers = customers;
     }
   
-    
-    @Override
-    public Long getId() {
-        return id;
-    }
-    
-    
-    @Override
-    public void setId(Long id) {
-        this.id = id;
-    }
     
 }

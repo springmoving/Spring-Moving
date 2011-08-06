@@ -16,7 +16,6 @@
 package org.spring.moving.core.model.account.impl;
 
 import java.io.Serializable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
@@ -25,8 +24,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import org.spring.moving.core.domain.account.api.Account;
-import org.spring.moving.core.domain.account.api.Customer;
 import org.spring.moving.core.domain.configuration.api.Local;
+import org.spring.moving.core.model.configuration.impl.LocalImpl;
 
 /**
  * 
@@ -34,7 +33,7 @@ import org.spring.moving.core.domain.configuration.api.Local;
  */
 @Entity
 @Table(name = "sm_customer")
-public class CustomerImpl implements Customer, Serializable {
+public class CustomerImpl implements Serializable {
 
 
     
@@ -53,108 +52,102 @@ public class CustomerImpl implements Customer, Serializable {
     
     //Relationships
     @ManyToOne()   
-    @Column(name="localcompanyprofileid")
-    private Local localCompanyProfile;
+    @JoinColumn(name="localcompanyprofileid")
+    private LocalImpl localCompanyProfile;
     
     @ManyToOne()
     @JoinColumn(name="accountid")
-    private Account account;
+    private AccountImpl account;
     
     
     
-    @Override
     public Long getId() {
         return id;
     }
     
     
-    @Override
     public void setId(Long id) {
         this.id = id;
     }    
     
 
     
-    @Override
     public String getName() {
         return name;
     }
     
-    @Override
+    
     public void setName(String name) {
         this.name = name;
     }    
     
  
 
-    @Override
     public String getAddress1() {
         return address1;
     }
 
-    @Override
+
     public void setAddress1(String address1) {
         this.address1 = address1;
     }
 
-    @Override
+
     public String getAddress2() {
         return address2;
     }
 
-    @Override
     public void setAddress2(String address2) {
         this.address2 = address2;
     }
 
-    @Override
     public String getCity() {
         return city;
     }
 
-    @Override
+    
     public void setCity(String city) {
         this.city = city;
     }
 
-    @Override
+    
     public String getState() {
         return state;
     }
 
-    @Override
+    
     public void setState(String state) {
         this.state = state;
     }
 
-    @Override
+    
     public String getZipcode() {
         return zipcode;
     }
 
-    @Override
+    
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
     
-    @Override
-    public Local getLocalCompanyProfile() {
+    
+    public LocalImpl getLocalCompanyProfile() {
         return localCompanyProfile;
     }
 
-    @Override
-    public void setLocalCompanyProfile(Local localCompanyProfile) {
+    
+    public void setLocalCompanyProfile(LocalImpl localCompanyProfile) {
         this.localCompanyProfile = localCompanyProfile;
     }
     
     
-    @Override
-    public Account getAccount() {
+    
+    public AccountImpl getAccount() {
         return account;
     }
 
-    @Override
-    public void setAccount(Account account) {
+    
+    public void setAccount(AccountImpl account) {
         this.account = account;
     }
     

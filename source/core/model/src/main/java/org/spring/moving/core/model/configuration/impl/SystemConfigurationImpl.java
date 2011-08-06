@@ -22,8 +22,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-import org.spring.moving.core.domain.configuration.api.CompanyProfile;
-import org.spring.moving.core.domain.configuration.api.SystemConfiguration;
 
 /**
  * 
@@ -31,7 +29,7 @@ import org.spring.moving.core.domain.configuration.api.SystemConfiguration;
  */
 @Entity
 @Table(name = "sm_system_configuration")
-public class SystemConfigurationImpl implements SystemConfiguration, Serializable {
+public class SystemConfigurationImpl implements  Serializable {
 
     
     @Id
@@ -40,25 +38,25 @@ public class SystemConfigurationImpl implements SystemConfiguration, Serializabl
     
     
     @OneToOne
-    private CompanyProfile companyProfile;
+    private CompanyProfileImpl companyProfile;
 
-    @Override
-    public CompanyProfile getCompanyProfile() {
+        
+    public CompanyProfileImpl getCompanyProfile() {
         return companyProfile;
     }
     
    
-    @Override
+    
     public Long getId() {
         return id;
     }
     
-    @Override
-    public void setCompanyProfile(CompanyProfile companyProfile) {
+    
+    public void setCompanyProfile(CompanyProfileImpl companyProfile) {
         this.companyProfile = companyProfile;
     }
     
-    @Override
+    
     public void setId(Long id) {
         this.id = id;
     }

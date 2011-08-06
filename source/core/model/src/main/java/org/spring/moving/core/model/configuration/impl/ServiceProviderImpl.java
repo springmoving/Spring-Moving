@@ -15,12 +15,12 @@
  */
 package org.spring.moving.core.model.configuration.impl;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import org.spring.moving.core.domain.account.api.Account;
-import org.spring.moving.core.domain.configuration.api.ServiceProvider;
+import org.spring.moving.core.model.account.impl.AccountImpl;
 
 /**
  * 
@@ -28,23 +28,23 @@ import org.spring.moving.core.domain.configuration.api.ServiceProvider;
  */
 @Entity
 @DiscriminatorValue("ServiceProvider")
-public class ServiceProviderImpl extends CompanyProfileImpl implements ServiceProvider {
+public class ServiceProviderImpl extends CompanyProfileImpl implements Serializable {
 
     
     
     @OneToMany(mappedBy="serviceProvider")
-    private List<Account> accounts;
-//    private List<CommunicationItem> communicationItems;
+    private List<AccountImpl> accounts;
+  //private List<CommunicationItem> communicationItems;
     
     
-    @Override
-    public List<Account> getAccounts() {
+    
+    public List<AccountImpl> getAccounts() {
         return accounts;
     }
     
     
-    @Override
-    public void setAccounts(List<Account> accounts) {
+    
+    public void setAccounts(List<AccountImpl> accounts) {
         this.accounts = accounts;
     }
    
