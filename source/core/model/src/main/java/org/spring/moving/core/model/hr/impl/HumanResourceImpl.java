@@ -53,7 +53,8 @@ public class HumanResourceImpl implements  Serializable {
     private String state;
     private String zipcode;
     
-            
+    //Relationships
+    private HumanResourceTypeImpl hrType;
     
 
     
@@ -175,6 +176,18 @@ public class HumanResourceImpl implements  Serializable {
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
+
+    public HumanResourceTypeImpl getHrType() {
+        return hrType;
+    }
+
+    public void setHrType(HumanResourceTypeImpl hrType) {
+        this.hrType = hrType;
+    }
         
+    
+    
+    
+    
     
 }

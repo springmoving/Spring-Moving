@@ -19,6 +19,12 @@ package org.spring.moving.core.domain.hr.api;
  *
  * @author Brad Messerle
  */
-public interface Contractor extends HumanResource {
+public interface HumanResourceType {
+    
+    public Long getId();
+    public void setId(Long id);
+    public String getName();
+    public void setName(String name); 
+    
     
 }
