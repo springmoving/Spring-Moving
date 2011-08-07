@@ -22,6 +22,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -39,6 +40,10 @@ public class MoveImpl implements Serializable {
     
     //Attributes
     private Long surveryDate;
+    private Long packDate;
+    private Long loadDate;
+    private Long deliveryDate;
+    
     private String workOrderNumber;
 
     //Relationships
@@ -48,9 +53,14 @@ public class MoveImpl implements Serializable {
     @OneToMany (mappedBy="move")
     private List<CubeSheetImpl> cubeSheets;
     
-    @OneToMany (mappedBy="move")
+    @OneToOne (mappedBy="move")
     private PackingMaterialImpl packingMaterial;
     
+    @OneToMany (mappedBy="move")
+    private List<ExtraPickupDeliveryImpl> extraStops;
+    
+    @OneToMany (mappedBy="move")
+    private List<ResidenceInformationImpl> locationInformation;
     
     public Long getId() {
         return id;
@@ -99,6 +109,48 @@ public class MoveImpl implements Serializable {
     public void setPackingMaterial(PackingMaterialImpl packingMaterial) {
         this.packingMaterial = packingMaterial;
     }
+
+    public List<ExtraPickupDeliveryImpl> getExtraStops() {
+        return extraStops;
+    }
+
+    public void setExtraStops(List<ExtraPickupDeliveryImpl> extraStops) {
+        this.extraStops = extraStops;
+    }
+
+    public Long getDeliveryDate() {
+        return deliveryDate;
+    }
+
+    public void setDeliveryDate(Long deliveryDate) {
+        this.deliveryDate = deliveryDate;
+    }
+
+    public Long getLoadDate() {
+        return loadDate;
+    }
+
+    public void setLoadDate(Long loadDate) {
+        this.loadDate = loadDate;
+    }
+
+    public Long getPackDate() {
+        return packDate;
+    }
+
+    public void setPackDate(Long packDate) {
+        this.packDate = packDate;
+    }
+
+    public List<ResidenceInformationImpl> getLocationInformation() {
+        return locationInformation;
+    }
+
+    public void setLocationInformation(List<ResidenceInformationImpl> locationInformation) {
+        this.locationInformation = locationInformation;
+    }
+    
+    
     
     
 }

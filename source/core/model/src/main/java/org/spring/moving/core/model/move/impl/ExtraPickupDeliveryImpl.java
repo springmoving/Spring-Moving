@@ -20,7 +20,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -28,64 +27,23 @@ import javax.persistence.Table;
  * @author Brad Messerle
  */
 @Entity
-@Table(name="sm_move_crates")
-public class CrateImpl implements Serializable {
+@Table(name="sm_move_extra_pd")
+public class ExtraPickupDeliveryImpl implements Serializable {
+    
     
     //Identiy
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Long id;
     
+    
     //Attributes
-    private String description;
-    private String dimensions;
-    private int cubicFeet;
+    private Boolean isPickup;
 
     //Relationships
-    @ManyToOne
     private MoveImpl move;
     
     
-    public int getCubicFeet() {
-        return cubicFeet;
-    }
-
-    public void setCubicFeet(int cubicFeet) {
-        this.cubicFeet = cubicFeet;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getDimensions() {
-        return dimensions;
-    }
-
-    public void setDimensions(String dimensions) {
-        this.dimensions = dimensions;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public MoveImpl getMove() {
-        return move;
-    }
-
-    public void setMove(MoveImpl move) {
-        this.move = move;
-    }
     
     
-        
 }
