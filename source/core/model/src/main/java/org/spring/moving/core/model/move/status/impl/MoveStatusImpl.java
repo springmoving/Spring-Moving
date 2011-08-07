@@ -25,29 +25,30 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 /**
  *
  * @author Brad Messerle
  */
 @Entity
-@Table(name="sm_move_status")
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="status",
-                     discriminatorType=DiscriminatorType.STRING)
+@Table(name = "sm_move_status")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "status",
+discriminatorType = DiscriminatorType.STRING)
 public abstract class MoveStatusImpl implements Serializable {
-    
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)    
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-   
- 
+
     /**
      * List of Status Types
      */
-    protected enum Status { INQUIRY, SURVEY, ESTIMATED, BOOKED, PACKING, LOADING, DELIVERING, BILLED, CLOSED};
-    
+    public enum Status {
+
+        INQUIRY, SURVEY, ESTIMATED, BOOKED, PACKING, LOADING, INTRANSIT, DELIVERING, BILLED, CLOSED
+    };
+
     public Long getId() {
         return id;
     }
@@ -55,6 +56,4 @@ public abstract class MoveStatusImpl implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-    
-    
 }

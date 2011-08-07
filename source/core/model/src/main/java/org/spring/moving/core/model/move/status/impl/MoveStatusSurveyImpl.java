@@ -27,16 +27,12 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("Survey")
 public class MoveStatusSurveyImpl extends MoveStatusImpl implements Serializable {
-    
-    
-    
+
     /**
      * Return the status type of survey
-     * @return 
+     * @return Status.SURVEY
      */
-    public final Status getStatus()
-    {
+    public final Status getStatus() {
         return Status.SURVEY;
     }
-    
 }

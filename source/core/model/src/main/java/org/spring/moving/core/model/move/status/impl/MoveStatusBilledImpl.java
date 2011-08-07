@@ -20,19 +20,19 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
- * Move Status of Inquiry 
- *
+ * Move Status of Billed 
+ * 
  * @author Brad Messerle
  */
 @Entity
-@DiscriminatorValue("Inquiry")
-public class MoveStatusInquiryImpl extends MoveStatusImpl implements Serializable {
+@DiscriminatorValue("Billed")
+public class MoveStatusBilledImpl extends MoveStatusImpl implements Serializable {
 
     /**
-     * Return the status type of inquiry
-     * @return Status.INQUIRY
+     * Return the status type of billed
+     * @return Status.BILLED
      */
     public final Status getStatus() {
-        return Status.INQUIRY;
+        return Status.BILLED;
     }
 }
