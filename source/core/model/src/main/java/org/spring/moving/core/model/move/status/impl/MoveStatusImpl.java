@@ -13,22 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.spring.moving.core.model.move.status.impl;
 
-package org.spring.moving.core.domain.move.api;
+import java.io.Serializable;
 
 /**
  *
- * @author Kristy Schoonover
+ * @author Brad Messerle
  */
 
-public interface Crate {
+public class MoveStatusImpl implements Serializable {
     
-    public int getCubicFeet();
-    public String getDescription();
-    public String getDimensions();
-    public Long getId();
-    public void setCubicFeet(int cubicFeet);
-    public void setDescription(String description);   
-    public void setDimensions(String dimensions);
-    public void setId(int id);
+    
+    
+    
 }

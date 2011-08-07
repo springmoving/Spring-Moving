@@ -13,22 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package org.spring.moving.core.domain.move.api;
+package org.spring.moving.core.domain.move.status.api;
 
 /**
  *
- * @author Kristy Schoonover
+ * @author Brad Messerle
  */
-
-public interface Crate {
+public interface MoveStatus {
     
-    public int getCubicFeet();
-    public String getDescription();
-    public String getDimensions();
-    public Long getId();
-    public void setCubicFeet(int cubicFeet);
-    public void setDescription(String description);   
-    public void setDimensions(String dimensions);
-    public void setId(int id);
+    
+    
+    
 }

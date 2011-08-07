@@ -16,7 +16,6 @@
 
 package org.spring.moving.core.domain.move.api;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -32,15 +31,15 @@ public interface Move {
     public PackingMaterial getPackingMaterial();
     public ShipperInfo getShipper();
     public StorageInTransit getSit();
-    public Date getSurveyDate();
-    public int getWorkOrderNumber();
+    public Long getSurveyDate();
+    public String getWorkOrderNumber();
     public void setCrates(List<Crate> crates);
     public void setCubeSheets(List<CubeSheet> cubeSheets);
     public void setId(int id);
     public void setPackingMaterial(PackingMaterial packingMaterial);
     public void setShipper(ShipperInfo shipper);
     public void setSit(StorageInTransit sit);
-    public void setSurveyDate(Date surveyDate);
-    public void setWorkOrderNumber(int workOrderNumber);   
+    public void setSurveyDate(Long surveyDate);
+    public void setWorkOrderNumber(String workOrderNumber);   
     
 }
