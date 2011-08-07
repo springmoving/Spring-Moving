@@ -21,19 +21,20 @@ import java.util.List;
 /**
  *
  * @author Kristy Schoonover
+ * @author Brad Messerle
  */
 
 public interface CubeSheet {
     
     public List<CubeSheetCategory> getExcludedItems();
     public String getExtraLabor();
-    public int getId();
+    public Long getId();
     public List<CubeSheetCategory> getIncludedItems();
     public String getName();
     public String getNotes();
     public void setExcludedItems(List<CubeSheetCategory> excludedItems);
     public void setExtraLabor(String extraLabor);
-    public void setId(int id);
+    public void setId(Long id);
     public void setIncludedItems(List<CubeSheetCategory> includedItems);
     public void setName(String name);
     public void setNotes(String notes);

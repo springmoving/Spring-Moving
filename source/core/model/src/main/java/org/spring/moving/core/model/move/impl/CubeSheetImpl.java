@@ -16,11 +16,13 @@
 package org.spring.moving.core.model.move.impl;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -28,32 +30,27 @@ import javax.persistence.Table;
  * @author Brad Messerle
  */
 @Entity
-@Table(name="sm_move_crates")
-public class CrateImpl implements Serializable {
+@Table(name="sm_move_cubesheets")
+public class CubeSheetImpl implements Serializable {
     
-    //ID
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)    
     private Long id;
     
     //Attributes
+    private String extraLabor;
     private String description;
-    private String dimensions;
-    private int cubicFeet;
-
+    private String notes;
+    
     //Relationships
     @ManyToOne
     private MoveImpl move;
     
-    
-    public int getCubicFeet() {
-        return cubicFeet;
-    }
+    @OneToMany(mappedBy="cubeSheet")
+    private List<CubeSheetCategoryItemImpl> items;
 
-    public void setCubicFeet(int cubicFeet) {
-        this.cubicFeet = cubicFeet;
-    }
-
+        
     public String getDescription() {
         return description;
     }
@@ -62,12 +59,12 @@ public class CrateImpl implements Serializable {
         this.description = description;
     }
 
-    public String getDimensions() {
-        return dimensions;
+    public String getExtraLabor() {
+        return extraLabor;
     }
 
-    public void setDimensions(String dimensions) {
-        this.dimensions = dimensions;
+    public void setExtraLabor(String extraLabor) {
+        this.extraLabor = extraLabor;
     }
 
     public Long getId() {
@@ -78,6 +75,14 @@ public class CrateImpl implements Serializable {
         this.id = id;
     }
 
+    public List<CubeSheetCategoryItemImpl> getItems() {
+        return items;
+    }
+
+    public void setItems(List<CubeSheetCategoryItemImpl> items) {
+        this.items = items;
+    }
+
     public MoveImpl getMove() {
         return move;
     }
@@ -85,7 +90,15 @@ public class CrateImpl implements Serializable {
     public void setMove(MoveImpl move) {
         this.move = move;
     }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
     
     
-        
+    
 }

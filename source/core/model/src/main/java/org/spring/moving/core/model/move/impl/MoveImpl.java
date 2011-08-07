@@ -16,10 +16,12 @@
 package org.spring.moving.core.model.move.impl;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -35,10 +37,18 @@ public class MoveImpl implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)    
     private Long id;
     
+    //Attributes
     private Long surveryDate;
-    
     private String workOrderNumber;
 
+    //Relationships
+    @OneToMany (mappedBy="move")
+    private List<CrateImpl> crates;
+    
+    @OneToMany (mappedBy="move")
+    private List<CubeSheetImpl> cubeSheets;
+    
+    
     public Long getId() {
         return id;
     }
@@ -62,10 +72,14 @@ public class MoveImpl implements Serializable {
     public void setWorkOrderNumber(String workOrderNumber) {
         this.workOrderNumber = workOrderNumber;
     }
-    
-    
-    
-    
-    
+
+    public List<CrateImpl> getCrates() {
+        return crates;
+    }
+
+    public void setCrates(List<CrateImpl> crates) {
+        this.crates = crates;
+    }
+        
     
 }

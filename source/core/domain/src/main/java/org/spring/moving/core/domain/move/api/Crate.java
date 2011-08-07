@@ -19,16 +19,19 @@ package org.spring.moving.core.domain.move.api;
 /**
  *
  * @author Kristy Schoonover
+ * @author Brad Messerle
  */
 
 public interface Crate {
     
     public int getCubicFeet();
-    public String getDescription();
-    public String getDimensions();
-    public Long getId();
     public void setCubicFeet(int cubicFeet);
-    public void setDescription(String description);   
+    public String getDescription();
+    public void setDescription(String description);
+    public String getDimensions();
     public void setDimensions(String dimensions);
-    public void setId(int id);
+    public Long getId();
+    public void setId(Long id);
+    public Move getMove();
+    public void setMove(Move move);
 }
