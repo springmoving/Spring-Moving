@@ -46,6 +46,8 @@ public class ResidenceInformationImpl implements Serializable {
     private int numberOfInsideSteps;
     private int numberOfOutsideSteps;
     private Boolean elevator;
+    private Boolean longCarry;
+    private String longCarryDistance;
     private Boolean shuttleRequired;
     private String shuttleTruckSize;
     private String shuttleReason;
@@ -210,9 +212,21 @@ public class ResidenceInformationImpl implements Serializable {
     public void setType(String type) {
         this.type = type;
     }
-    
-    
-    
-    
+
+    public Boolean getLongCarry() {
+        return longCarry;
+    }
+
+    public void setLongCarry(Boolean longCarry) {
+        this.longCarry = longCarry;
+    }
+
+    public String getLongCarryDistance() {
+        return longCarryDistance;
+    }
+
+    public void setLongCarryDistance(String longCarryDistance) {
+        this.longCarryDistance = longCarryDistance;
+    }
     
 }

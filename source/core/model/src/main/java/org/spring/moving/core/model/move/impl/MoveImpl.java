@@ -34,6 +34,7 @@ import javax.persistence.Table;
 @Table(name="sm_move")
 public class MoveImpl implements Serializable {
   
+    //Idenity
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)    
     private Long id;
@@ -43,8 +44,8 @@ public class MoveImpl implements Serializable {
     private Long packDate;
     private Long loadDate;
     private Long deliveryDate;
-    
     private String workOrderNumber;
+    private String specialInstructions;
 
     //Relationships
     @OneToMany (mappedBy="move")
@@ -61,6 +62,9 @@ public class MoveImpl implements Serializable {
     
     @OneToMany (mappedBy="move")
     private List<ResidenceInformationImpl> locationInformation;
+    
+    @OneToOne 
+    private ExtraLaborImpl extraLabor;
     
     public Long getId() {
         return id;
@@ -148,6 +152,22 @@ public class MoveImpl implements Serializable {
 
     public void setLocationInformation(List<ResidenceInformationImpl> locationInformation) {
         this.locationInformation = locationInformation;
+    }
+
+    public String getSpecialInstructions() {
+        return specialInstructions;
+    }
+
+    public void setSpecialInstructions(String specialInstructions) {
+        this.specialInstructions = specialInstructions;
+    }
+
+    public ExtraLaborImpl getExtraLabor() {
+        return extraLabor;
+    }
+
+    public void setExtraLabor(ExtraLaborImpl extraLabor) {
+        this.extraLabor = extraLabor;
     }
     
     
