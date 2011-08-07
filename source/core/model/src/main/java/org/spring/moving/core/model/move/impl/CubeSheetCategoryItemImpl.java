@@ -50,7 +50,8 @@ public class CubeSheetCategoryItemImpl implements Serializable {
     @ManyToOne
     private CubeSheetImpl cubeSheet;
 
-    
+    @ManyToOne
+    private CubeSheetCategoryImpl category;
     
     
     public String getApplianceMake() {

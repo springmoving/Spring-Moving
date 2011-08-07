@@ -48,6 +48,9 @@ public class MoveImpl implements Serializable {
     @OneToMany (mappedBy="move")
     private List<CubeSheetImpl> cubeSheets;
     
+    @OneToMany (mappedBy="move")
+    private PackingMaterialImpl packingMaterial;
+    
     
     public Long getId() {
         return id;
@@ -80,6 +83,22 @@ public class MoveImpl implements Serializable {
     public void setCrates(List<CrateImpl> crates) {
         this.crates = crates;
     }
-        
+
+    public List<CubeSheetImpl> getCubeSheets() {
+        return cubeSheets;
+    }
+
+    public void setCubeSheets(List<CubeSheetImpl> cubeSheets) {
+        this.cubeSheets = cubeSheets;
+    }
+
+    public PackingMaterialImpl getPackingMaterial() {
+        return packingMaterial;
+    }
+
+    public void setPackingMaterial(PackingMaterialImpl packingMaterial) {
+        this.packingMaterial = packingMaterial;
+    }
+    
     
 }
