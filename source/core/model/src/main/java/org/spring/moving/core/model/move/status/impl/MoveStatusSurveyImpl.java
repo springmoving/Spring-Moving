@@ -20,21 +20,23 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
- * Move Status of Inquiry 
- *
+ * Move Status of Survey 
+ * 
  * @author Brad Messerle
  */
 @Entity
-@DiscriminatorValue("Inquiry")
-public class MoveStatusInquiry  extends MoveStatusImpl implements Serializable{
-
-  
+@DiscriminatorValue("Survey")
+public class MoveStatusSurveyImpl extends MoveStatusImpl implements Serializable {
+    
+    
+    
     /**
-     * Return the status type
+     * Return the status type of survey
      * @return 
      */
     public final Status getStatus()
     {
-        return Status.INQUIRY;
+        return Status.SURVEY;
     }
+    
 }

@@ -46,7 +46,7 @@ public abstract class MoveStatusImpl implements Serializable {
     /**
      * List of Status Types
      */
-    protected enum Status { INQUIRY, SURVEY, ESTIMATED};
+    protected enum Status { INQUIRY, SURVEY, ESTIMATED, BOOKED, PACKING, LOADING, DELIVERING, BILLED, CLOSED};
     
     public Long getId() {
         return id;
