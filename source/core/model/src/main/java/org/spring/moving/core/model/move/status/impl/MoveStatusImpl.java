@@ -16,15 +16,45 @@
 package org.spring.moving.core.model.move.status.impl;
 
 import java.io.Serializable;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  *
  * @author Brad Messerle
  */
+@Entity
+@Table(name="sm_move_status")
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="status",
+                     discriminatorType=DiscriminatorType.STRING)
+public abstract class MoveStatusImpl implements Serializable {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)    
+    private Long id;
+   
+ 
+    /**
+     * List of Status Types
+     */
+    protected enum Status { INQUIRY, SURVEY, ESTIMATED};
+    
+    public Long getId() {
+        return id;
+    }
 
-public class MoveStatusImpl implements Serializable {
-    
-    
+    public void setId(Long id) {
+        this.id = id;
+    }
     
     
 }
