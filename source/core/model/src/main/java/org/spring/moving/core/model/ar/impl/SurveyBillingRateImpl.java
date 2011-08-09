@@ -15,10 +15,25 @@
  */
 package org.spring.moving.core.model.ar.impl;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author bradmesserle
  */
-public class SurveyBillingRate {
+@Entity
+@Table(name = "sm_ar_billing_rate")
+public class SurveyBillingRateImpl implements Serializable {
+    
+    //Idenity
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
     
 }
