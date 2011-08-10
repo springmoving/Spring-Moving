@@ -9,7 +9,7 @@
     <changeSet id="1" author="Brad Messerle">
  
         <createTable tableName="sm_system_configuration">
-            <column name="id" type="int" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             
@@ -17,7 +17,7 @@
         </createTable>
         
         <createTable tableName="sm_company_profile">
-            <column name="id" type="int" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="varchar(100)"/>
@@ -32,7 +32,7 @@
         </createTable>              
 
         <createTable tableName="sm_account">
-            <column name="id" type="int" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="varchar(100)"/>
@@ -46,7 +46,7 @@
         </createTable>
 
         <createTable tableName="sm_customer">
-            <column name="id" type="int" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="varchar(100)"/>
@@ -56,10 +56,94 @@
             <column name="state" type="varchar(10)"/> 
             <column name="zipcode" type="varchar(10)"/>
             
-            <column name="localcompanyprofileid" type="int" />
-            <column name="accountid" type="int" />
+            <column name="localcompanyprofileid" type="bigint" />
+            <column name="accountid" type="bigint" />
         
         </createTable>
+        
+        <createTable tableName="sm_move">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="surveydate" type="bigint"/>
+            <column name="packdate" type="bigint"/>
+            <column name="loaddate" type="bigint"/>
+            <column name="deliverydate" type="bigint"/>
+            <column name="workordernumber" type="varchar(100)"/>
+            <column name="specialinstructions" type="clob"/>
+        </createTable>
+        
+        <createTable tableName="sm_move_status">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="status" type="varchar(50)"/>
+        </createTable>
+        
+        <createTable tableName="sm_move_crates">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="move" type="bigint"/>
+            <column name="description" type="varchar(150)"/>
+            <column name="dimensions" type="varchar(50)"/>
+            <column name="cubicfeet" type="int"/>
+        </createTable>
+        
+        <createTable tableName="sm_move_cubesheets">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+        
+            <column name="extralabor" type="clob"/>
+            <column name="description" type="varchar(150)"/>
+                      
+            <column name="move" type="bigint"/>
+        </createTable>        
+        
+        
+        <createTable tableName="sm_move_cubesheet_category">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="move" type="bigint"/>
+            <column name="name" type="varchar(150)"/>
+        </createTable>
+
+        <createTable tableName="sm_move_cubesheet_items">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            
+            <column name="name" type="varchar(250)" />
+            <column name="cubicfeet" type="int" />
+            <column name="numberofitems" type="int" />
+            <column name="appliancemake" type="varchar(150)" />
+            <column name="appliancemodel" type="varchar(150)" />
+            <column name="numberofcribmattress" type="int" />
+            <column name="numberofsinglemattress" type="int" />
+            
+            <column name="cubesheet" type="bigint" />
+            <column name="category" type="bigint" />
+        </createTable>
+        
+        <createTable tableName="sm_move_extra_labor">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            
+            <column name="pbonumberofmen" type="int"/>
+            <column name="pbonumberofhours" type="int"/>
+            <column name="bedassemblynumberofmen" type="int"/>
+            <column name="bedassemblynumberofhours" type="int"/>
+            <column name="desksnumberofmen" type="int"/>
+            <column name="desksnumberofhours" type="int"/>
+            <column name="atticremovalnumberofmen" type="int"/>
+            <column name="atticremovalnumberofhours" type="int"/>
+            <column name="other" type="varchar(250)"/>
+            
+            <column name="move" type="bigint"/>
+        </createTable>        
         
   
     

@@ -46,6 +46,7 @@ public class ExtraLaborImpl implements Serializable {
     private int atticRemovalNumberOfHours;
     private String other;
     
+    
     public int getAtticRemovalNumberOfHours() {
         return atticRemovalNumberOfHours;
     }

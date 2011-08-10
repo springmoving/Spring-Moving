@@ -125,10 +125,14 @@ public class CubeSheetCategoryItemImpl implements Serializable {
     public void setNumberOfSingleMattress(int numberOfSingleMattress) {
         this.numberOfSingleMattress = numberOfSingleMattress;
     }
-    
-    
-    
-    
+
+    public CubeSheetCategoryImpl getCategory() {
+        return category;
+    }
+
+    public void setCategory(CubeSheetCategoryImpl category) {
+        this.category = category;
+    }
     
     
 }

@@ -41,7 +41,7 @@ public class CubeSheetImpl implements Serializable {
     //Attributes
     private String extraLabor;
     private String description;
-    private String notes;
+   
     
     //Relationships
     @ManyToOne
@@ -91,14 +91,5 @@ public class CubeSheetImpl implements Serializable {
         this.move = move;
     }
 
-    public String getNotes() {
-        return notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-    
-    
     
 }
