@@ -32,12 +32,6 @@
     
     <dependencies>
    
-        <!-- Spring Moving Dependencies -->
-        <dependency>
-            <groupId>spring.moving.org.model</groupId>
-            <artifactId>spring-moving-model</artifactId>
-            <version>MAIN-SNAPSHOT</version>
-        </dependency>
 
 
     </dependencies>

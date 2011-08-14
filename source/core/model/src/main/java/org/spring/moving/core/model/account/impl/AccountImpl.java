@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.spring.moving.core.model.account.impl;
+
 
 import java.io.Serializable;
 import java.util.List;
@@ -25,6 +27,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import org.spring.moving.core.model.configuration.impl.ServiceProviderImpl;
+
 
 /**
  * 

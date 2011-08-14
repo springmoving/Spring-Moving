@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.spring.moving.core.model.ar.impl;
 
 import java.io.Serializable;
@@ -28,7 +29,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "sm_ar_invoices")
-public class InvoiceImpl implements  Serializable {
+public class InvoiceImpl implements Serializable {
     
     
     //Idenity
@@ -43,6 +44,32 @@ public class InvoiceImpl implements  Serializable {
     
     
     //Relationships
+
+    
+    
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
+    public Long getDate() {
+        return date;
+    }
+
+    public void setDate(Long date) {
+        this.date = date;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
     
     
     

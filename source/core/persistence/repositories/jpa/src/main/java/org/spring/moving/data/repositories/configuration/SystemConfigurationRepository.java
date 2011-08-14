@@ -13,37 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.spring.moving.core.model.ar.impl;
+package org.spring.moving.data.repositories.configuration;
 
-import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.spring.moving.core.model.configuration.impl.SystemConfigurationImpl;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  *
- * @author bradmesserle
+ * @author Brad Messerle
  */
-@Entity
-@Table(name = "sm_ar_billing_rate")
-public class SurveyBillingRateImpl implements Serializable {
-    
-    //Idenity
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    
-    
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+public interface SystemConfigurationRepository extends CrudRepository<SystemConfigurationImpl, Long> {
     
     
     

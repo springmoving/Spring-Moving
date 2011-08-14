@@ -7,8 +7,8 @@
         <artifactId>spring-moving-core</artifactId>
         <version>MAIN-SNAPSHOT</version>
     </parent>
-    <groupId>spring.moving.org.model</groupId>
-    <artifactId>spring-moving-model</artifactId>
+    <groupId>spring.moving.org.core.model</groupId>
+    <artifactId>spring-moving-core-model</artifactId>
     <version>MAIN-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Spring Moving - Core - Model Module</name>
@@ -27,10 +27,6 @@
         </developer>
     </developers>
     <dependencies>
-        <dependency>
-            <groupId>spring.moving.org.domain</groupId>
-            <artifactId>spring-moving-domain</artifactId>
-            <version>MAIN-SNAPSHOT</version>
-        </dependency>
+
     </dependencies>
 </project>

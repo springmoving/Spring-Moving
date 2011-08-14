@@ -29,9 +29,9 @@
     
     <dependencies>
         <dependency>
-            <groupId>spring.moving.org.model</groupId>
-            <artifactId>spring-moving-model</artifactId>
-            <version>MAIN-SNAPSHOT</version>    
+            <groupId>spring.moving.org.core.model</groupId>
+            <artifactId>spring-moving-core-model</artifactId>
+            <version>MAIN-SNAPSHOT</version>
         </dependency>
     </dependencies>
     

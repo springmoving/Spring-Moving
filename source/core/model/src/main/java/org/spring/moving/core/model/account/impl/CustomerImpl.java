@@ -23,8 +23,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import org.spring.moving.core.domain.account.api.Account;
-import org.spring.moving.core.domain.configuration.api.Local;
+
 import org.spring.moving.core.model.configuration.impl.LocalImpl;
 
 /**

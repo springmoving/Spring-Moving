@@ -13,18 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.spring.moving.data.repositories;
+package org.spring.moving.data.repositories.ar;
 
-import org.spring.moving.core.model.configuration.impl.SystemConfigurationImpl;
+import org.spring.moving.core.model.ar.impl.SurveyBillingRateImpl;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author Brad Messerle
  */
-public interface SystemConfigurationRepository extends CrudRepository<SystemConfigurationImpl, Long> {
-    
-    
-    
+public interface SurveyBillingRateRepository extends CrudRepository<SurveyBillingRateImpl, Long> {
     
 }

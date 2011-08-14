@@ -134,14 +134,14 @@
             
             <column name="move_id" type="bingint"/>
             
-            <column name="pbonumberofmen" type="int"/>
-            <column name="pbonumberofhours" type="int"/>
-            <column name="bedassemblynumberofmen" type="int"/>
-            <column name="bedassemblynumberofhours" type="int"/>
-            <column name="desksnumberofmen" type="int"/>
-            <column name="desksnumberofhours" type="int"/>
-            <column name="atticremovalnumberofmen" type="int"/>
-            <column name="atticremovalnumberofhours" type="int"/>
+            <column name="pboNumberOfMen" type="int"/>
+            <column name="pboNumberOfHours" type="int"/>
+            <column name="bedAssemblyNumberOfMen" type="int"/>
+            <column name="bedAssemblyNumberOfHours" type="int"/>
+            <column name="desksNumberOfMen" type="int"/>
+            <column name="desksNumberOfHours" type="int"/>
+            <column name="atticRemovalNumberOfMen" type="int"/>
+            <column name="atticRemovalNumberOfHours" type="int"/>
             <column name="other" type="varchar(250)"/>
             
         </createTable>        
@@ -164,12 +164,41 @@
             <column name="numberOfCarton60Cp" type="int"/>
             <column name="numberOfCarton60Pbo" type="int"/>
             <column name="numberOfWardrobeCp" type="int"/>
-            <column name="numberofWardrobePbo" type="int"/>
+            <column name="numberOfWardrobePbo" type="int"/>
             <column name="numberOfMirrorCartonCp" type="int"/>
             <column name="numberOfMirrorCartonPbo" type="int"/>
             
             
         </createTable>          
+        
+         <createTable tableName="sm_move_residence_info">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            
+            <column name="move_id" type="bingint"/>
+            
+            <column name="type" type="varchar(50)"/>
+            <column name="location" type="varchar(50)" />
+            <column name="numberOfInsideSteps" type="int"/>
+            <column name="numberOfOutsideSteps" type="int"/>
+            <column name="elevator" type="int"/>
+            <column name="longCarry" type="int"/>
+            <column name="longCarryDistance" type="varchar(20)"/>
+            <column name="shuttleRequired" type="int"/>
+            <column name="shuttleTruckSize" type="varchar(50)"/>
+            <column name="shuttleReason" type="varchar(250)"/>
+            <column name="basement" type="int"/>
+            <column name="extraFloorProtection" type="int"/>
+            <column name="streetAccess" type="int"/>
+            <column name="parkingAvailability" type="int"/>
+            <column name="lowTrees" type="int"/>
+            <column name="numberOfBedrooms" type="int"/>
+            <column name="numberOfLevels" type="int"/>
+            <column name="notes" type="clob"/>
+                 
+            
+         </createTable>    
         
   
     
