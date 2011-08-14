@@ -17,10 +17,15 @@ package org.spring.moving.core.model.hr.impl;
 
 
 import java.io.Serializable;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -54,7 +59,11 @@ public class HumanResourceImpl implements  Serializable {
     private String zipcode;
     
     //Relationships
+    @OneToOne
     private HumanResourceTypeImpl hrType;
+    
+    @OneToOne
+    private HumanResourceStatusImpl status;
     
 
     
@@ -184,10 +193,14 @@ public class HumanResourceImpl implements  Serializable {
     public void setHrType(HumanResourceTypeImpl hrType) {
         this.hrType = hrType;
     }
+
+    public HumanResourceStatusImpl getStatus() {
+        return status;
+    }
+
+    public void setStatus(HumanResourceStatusImpl status) {
+        this.status = status;
+    }
         
-    
-    
-    
-    
     
 }
