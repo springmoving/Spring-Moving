@@ -17,11 +17,11 @@ package org.spring.moving.core.model.move.impl;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -46,7 +46,7 @@ public class CubeSheetImpl implements Serializable {
     
     //Relationships
     @ManyToOne
-    @Column(name="move_id")
+    @JoinColumn(name="move_id")
     private MoveImpl move;
     
     @OneToMany(mappedBy="cubeSheet")
