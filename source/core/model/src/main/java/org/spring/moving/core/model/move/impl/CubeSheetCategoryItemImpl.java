@@ -44,6 +44,7 @@ public class CubeSheetCategoryItemImpl implements Serializable {
     private String applianceModel;
     private int numberOfCribMattress;
     private int numberOfSingleMattress;
+    private Boolean excluded;
     
     
     //Relationships
@@ -132,6 +133,14 @@ public class CubeSheetCategoryItemImpl implements Serializable {
 
     public void setCategory(CubeSheetCategoryImpl category) {
         this.category = category;
+    }
+
+    public Boolean getExcluded() {
+        return excluded;
+    }
+
+    public void setExcluded(Boolean excluded) {
+        this.excluded = excluded;
     }
     
     

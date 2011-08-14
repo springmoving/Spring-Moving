@@ -16,10 +16,12 @@
 package org.spring.moving.core.model.move.impl;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -41,7 +43,35 @@ public class ExtraPickupDeliveryImpl implements Serializable {
     private Boolean isPickup;
 
     //Relationships
+    @ManyToOne
+    @Column(name="move_id")
+    
+    
     private MoveImpl move;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Boolean getIsPickup() {
+        return isPickup;
+    }
+
+    public void setIsPickup(Boolean isPickup) {
+        this.isPickup = isPickup;
+    }
+
+    public MoveImpl getMove() {
+        return move;
+    }
+
+    public void setMove(MoveImpl move) {
+        this.move = move;
+    }
     
     
     

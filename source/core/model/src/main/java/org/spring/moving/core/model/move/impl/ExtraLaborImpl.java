@@ -16,10 +16,12 @@
 package org.spring.moving.core.model.move.impl;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -46,6 +48,10 @@ public class ExtraLaborImpl implements Serializable {
     private int atticRemovalNumberOfHours;
     private String other;
     
+    //Relatinships
+    @ManyToOne
+    @Column(name="move_id")
+    private MoveImpl move;
     
     public int getAtticRemovalNumberOfHours() {
         return atticRemovalNumberOfHours;

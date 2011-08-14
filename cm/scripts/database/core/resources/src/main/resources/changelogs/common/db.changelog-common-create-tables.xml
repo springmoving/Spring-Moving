@@ -84,7 +84,7 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="move" type="bigint"/>
+            <column name="move_id" type="bingint"/>
             <column name="description" type="varchar(150)"/>
             <column name="dimensions" type="varchar(50)"/>
             <column name="cubicfeet" type="int"/>
@@ -98,7 +98,7 @@
             <column name="extralabor" type="clob"/>
             <column name="description" type="varchar(150)"/>
                       
-            <column name="move" type="bigint"/>
+            <column name="move_id" type="bingint"/>
         </createTable>        
         
         
@@ -106,7 +106,7 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="move" type="bigint"/>
+            <column name="move_id" type="bingint"/>
             <column name="name" type="varchar(150)"/>
         </createTable>
 
@@ -132,6 +132,8 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             
+            <column name="move_id" type="bingint"/>
+            
             <column name="pbonumberofmen" type="int"/>
             <column name="pbonumberofhours" type="int"/>
             <column name="bedassemblynumberofmen" type="int"/>
@@ -142,8 +144,32 @@
             <column name="atticremovalnumberofhours" type="int"/>
             <column name="other" type="varchar(250)"/>
             
-            <column name="move" type="bigint"/>
         </createTable>        
+        
+        <createTable tableName="sm_move_packing_material">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            
+            <column name="move_id" type="bingint"/>
+            
+            <column name="numberOfDispacksCp" type="int"/>
+            <column name="numberOfDispacksPbo" type="int"/>
+            <column name="numberOfCarton15Cp" type="int"/>
+            <column name="numberOfCarton15Pbo" type="int"/>
+            <column name="numberOfCarton30Cp" type="int"/>
+            <column name="numberOfCarton30Pbo" type="int"/>
+            <column name="numberOfCarton45Cp" type="int"/>
+            <column name="numberOfCarton45Pbo" type="int"/>
+            <column name="numberOfCarton60Cp" type="int"/>
+            <column name="numberOfCarton60Pbo" type="int"/>
+            <column name="numberOfWardrobeCp" type="int"/>
+            <column name="numberofWardrobePbo" type="int"/>
+            <column name="numberOfMirrorCartonCp" type="int"/>
+            <column name="numberOfMirrorCartonPbo" type="int"/>
+            
+            
+        </createTable>          
         
   
     

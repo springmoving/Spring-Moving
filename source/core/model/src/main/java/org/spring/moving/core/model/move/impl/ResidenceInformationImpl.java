@@ -16,6 +16,7 @@
 package org.spring.moving.core.model.move.impl;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -63,6 +64,7 @@ public class ResidenceInformationImpl implements Serializable {
     
     //Relationships
     @ManyToOne
+    @Column(name="move_id")
     private MoveImpl move;
 
     

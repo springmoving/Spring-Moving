@@ -16,6 +16,7 @@
 package org.spring.moving.core.model.move.impl;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -38,12 +39,154 @@ public class PackingMaterialImpl implements Serializable {
     private Long id;
     
     //Attributes
-    
-    
+    private int numberOfDispacksCp;
+    private int numberOfDispacksPbo;
+    private int numberOfCarton15Cp;
+    private int numberOfCarton15Pbo;
+    private int numberOfCarton30Cp;
+    private int numberOfCarton30Pbo;
+    private int numberOfCarton45Cp;
+    private int numberOfCarton45Pbo;
+    private int numberOfCarton60Cp;
+    private int numberOfCarton60Pbo;
+    private int numberOfWardrobeCp;
+    private int numberofWardrobePbo;
+    private int numberOfMirrorCartonCp;
+    private int numberOfMirrorCartonPbo;
     
     //Relationships
-    @ManyToOne
+    @ManyToOne()
+    @Column(name="move_id")
     private MoveImpl move;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public MoveImpl getMove() {
+        return move;
+    }
+
+    public void setMove(MoveImpl move) {
+        this.move = move;
+    }
+
+    public int getNumberOfCarton15Cp() {
+        return numberOfCarton15Cp;
+    }
+
+    public void setNumberOfCarton15Cp(int numberOfCarton15Cp) {
+        this.numberOfCarton15Cp = numberOfCarton15Cp;
+    }
+
+    public int getNumberOfCarton15Pbo() {
+        return numberOfCarton15Pbo;
+    }
+
+    public void setNumberOfCarton15Pbo(int numberOfCarton15Pbo) {
+        this.numberOfCarton15Pbo = numberOfCarton15Pbo;
+    }
+
+    public int getNumberOfCarton30Cp() {
+        return numberOfCarton30Cp;
+    }
+
+    public void setNumberOfCarton30Cp(int numberOfCarton30Cp) {
+        this.numberOfCarton30Cp = numberOfCarton30Cp;
+    }
+
+    public int getNumberOfCarton30Pbo() {
+        return numberOfCarton30Pbo;
+    }
+
+    public void setNumberOfCarton30Pbo(int numberOfCarton30Pbo) {
+        this.numberOfCarton30Pbo = numberOfCarton30Pbo;
+    }
+
+    public int getNumberOfCarton45Cp() {
+        return numberOfCarton45Cp;
+    }
+
+    public void setNumberOfCarton45Cp(int numberOfCarton45Cp) {
+        this.numberOfCarton45Cp = numberOfCarton45Cp;
+    }
+
+    public int getNumberOfCarton45Pbo() {
+        return numberOfCarton45Pbo;
+    }
+
+    public void setNumberOfCarton45Pbo(int numberOfCarton45Pbo) {
+        this.numberOfCarton45Pbo = numberOfCarton45Pbo;
+    }
+
+    public int getNumberOfCarton60Cp() {
+        return numberOfCarton60Cp;
+    }
+
+    public void setNumberOfCarton60Cp(int numberOfCarton60Cp) {
+        this.numberOfCarton60Cp = numberOfCarton60Cp;
+    }
+
+    public int getNumberOfCarton60Pbo() {
+        return numberOfCarton60Pbo;
+    }
+
+    public void setNumberOfCarton60Pbo(int numberOfCarton60Pbo) {
+        this.numberOfCarton60Pbo = numberOfCarton60Pbo;
+    }
+
+    public int getNumberOfDispacksCp() {
+        return numberOfDispacksCp;
+    }
+
+    public void setNumberOfDispacksCp(int numberOfDispacksCp) {
+        this.numberOfDispacksCp = numberOfDispacksCp;
+    }
+
+    public int getNumberOfDispacksPbo() {
+        return numberOfDispacksPbo;
+    }
+
+    public void setNumberOfDispacksPbo(int numberOfDispacksPbo) {
+        this.numberOfDispacksPbo = numberOfDispacksPbo;
+    }
+
+    public int getNumberOfMirrorCartonCp() {
+        return numberOfMirrorCartonCp;
+    }
+
+    public void setNumberOfMirrorCartonCp(int numberOfMirrorCartonCp) {
+        this.numberOfMirrorCartonCp = numberOfMirrorCartonCp;
+    }
+
+    public int getNumberOfMirrorCartonPbo() {
+        return numberOfMirrorCartonPbo;
+    }
+
+    public void setNumberOfMirrorCartonPbo(int numberOfMirrorCartonPbo) {
+        this.numberOfMirrorCartonPbo = numberOfMirrorCartonPbo;
+    }
+
+    public int getNumberOfWardrobeCp() {
+        return numberOfWardrobeCp;
+    }
+
+    public void setNumberOfWardrobeCp(int numberOfWardrobeCp) {
+        this.numberOfWardrobeCp = numberOfWardrobeCp;
+    }
+
+    public int getNumberofWardrobePbo() {
+        return numberofWardrobePbo;
+    }
+
+    public void setNumberofWardrobePbo(int numberofWardrobePbo) {
+        this.numberofWardrobePbo = numberofWardrobePbo;
+    }
     
+       
     
 }
