@@ -42,7 +42,7 @@
             <column name="state" type="varchar(10)"/> 
             <column name="zipcode" type="varchar(10)"/>
             
-            <column name="serviceprovider" type"int" />
+            <column name="serviceprovider" type="int" />
         </createTable>
 
         <createTable tableName="sm_customer">
@@ -84,7 +84,7 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="move_id" type="bingint"/>
+            <column name="move_id" type="bigint"/>
             <column name="description" type="varchar(150)"/>
             <column name="dimensions" type="varchar(50)"/>
             <column name="cubicfeet" type="int"/>
@@ -98,7 +98,7 @@
             <column name="extralabor" type="clob"/>
             <column name="description" type="varchar(150)"/>
                       
-            <column name="move_id" type="bingint"/>
+            <column name="move_id" type="bigint"/>
         </createTable>        
         
         
@@ -106,7 +106,7 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="move_id" type="bingint"/>
+            <column name="move_id" type="BIGint"/>
             <column name="name" type="varchar(150)"/>
         </createTable>
 
@@ -132,7 +132,7 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             
-            <column name="move_id" type="bingint"/>
+            <column name="move_id" type="BIGint"/>
             
             <column name="pboNumberOfMen" type="int"/>
             <column name="pboNumberOfHours" type="int"/>
@@ -151,7 +151,7 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             
-            <column name="move_id" type="bingint"/>
+            <column name="move_id" type="BIGint"/>
             
             <column name="numberOfDispacksCp" type="int"/>
             <column name="numberOfDispacksPbo" type="int"/>
@@ -176,7 +176,7 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             
-            <column name="move_id" type="bingint"/>
+            <column name="move_id" type="BIGint"/>
             
             <column name="type" type="varchar(50)"/>
             <column name="location" type="varchar(50)" />
