@@ -43,9 +43,9 @@ public class CrateImpl implements Serializable {
     private int cubicFeet;
 
     //Relationships
-    @ManyToOne
-    @JoinColumn(name="move_id")
-    private MoveImpl move;
+    //@ManyToOne
+    //@JoinColumn(name="move_id")
+    //private MoveImpl move;
     
     
     public int getCubicFeet() {
@@ -80,6 +80,7 @@ public class CrateImpl implements Serializable {
         this.id = id;
     }
 
+    /*
     public MoveImpl getMove() {
         return move;
     }
@@ -87,7 +88,7 @@ public class CrateImpl implements Serializable {
     public void setMove(MoveImpl move) {
         this.move = move;
     }
-    
+    */
     
         
 }
