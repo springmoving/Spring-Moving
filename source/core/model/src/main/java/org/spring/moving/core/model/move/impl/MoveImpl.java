@@ -48,8 +48,8 @@ public class MoveImpl implements Serializable {
     private String specialInstructions;
 
     //Relationships
-    @OneToMany (mappedBy="move")
-    private List<CrateImpl> crates;
+    //@OneToMany (mappedBy="move")
+    //private List<CrateImpl> crates;
     
     @OneToMany (mappedBy="move")
     private List<CubeSheetImpl> cubeSheets;
@@ -90,13 +90,13 @@ public class MoveImpl implements Serializable {
         this.workOrderNumber = workOrderNumber;
     }
 
-    public List<CrateImpl> getCrates() {
-        return crates;
-    }
-
-    public void setCrates(List<CrateImpl> crates) {
-        this.crates = crates;
-    }
+//    public List<CrateImpl> getCrates() {
+//        return crates;
+//    }
+//
+//    public void setCrates(List<CrateImpl> crates) {
+//        this.crates = crates;
+//    }
 
     public List<CubeSheetImpl> getCubeSheets() {
         return cubeSheets;

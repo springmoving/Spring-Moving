@@ -42,10 +42,12 @@ public class CrateImpl implements Serializable {
     private String dimensions;
     private int cubicFeet;
 
+   
     //Relationships
-    //@ManyToOne
-    //@JoinColumn(name="move_id")
-    //private MoveImpl move;
+    
+    @ManyToOne
+    @JoinColumn(name="move_id")
+    private MoveImpl move;
     
     
     public int getCubicFeet() {
@@ -79,16 +81,13 @@ public class CrateImpl implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
-    /*
+    
     public MoveImpl getMove() {
         return move;
     }
 
     public void setMove(MoveImpl move) {
         this.move = move;
-    }
-    */
-    
+    }    
         
 }
