@@ -15,7 +15,7 @@
  */
 package org.spring.moving.system.controllers;
 
-import org.spring.moving.rest.system.api.KeepAlive;
+import org.spring.moving.rest.system.impl.KeepAliveImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +31,7 @@ public class KeepAliveController {
     
     
     @Autowired
-    KeepAlive keepAliveService;
+    KeepAliveImpl keepAliveService;
     
     
     @RequestMapping(value = "/system/keepalive", method = RequestMethod.GET)
